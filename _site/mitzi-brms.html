@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bayesian Data Analysis with BRMS (Bayesian Regression Models Using Stan)</title>
+    <meta name='description' content='Quickly build robust models for data analysis and prediction using BRMS'>
+
+    <link rel="canonical" href="http://localhost:4000/mitzi-brms">
+    <!--<link rel="alternate" type="application/rss+xml" title="Bike Adventure Italy" href="/feed.xml">-->
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700;900&display=swap" as="style">
+
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+
+    <!-- Ionicons -->
+    <link rel="preload" href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" as="style">
+
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+
+    <script>
+        
+        if (localStorage.getItem("theme") === "dark") {
+            document.documentElement.setAttribute("dark", "");
+            document.documentElement.classList.add('dark-mode');
+        }
+        
+    </script>
+
+    <style>
+    
+    /*!------------------------------------------------------------------
+[MAIN STYLESHEET]
+-------------------------------------------------------------------*/:root{--brand-color: #0073ec;--white: #fff;--light-gray: #f0f0f0;--light-blue: #f3f7ff;--blue-gray: #716f8a;--gray: #9e9e9e;--dark: #0c101a;--dark-blue: #1e2740;--background-color: var(--white);--background-alt-color: var(--light-blue);--text-color: var(--dark-blue);--text-alt-color: var(--blue-gray);--heading-font-color: var(--dark-blue);--link-color: var(--dark-blue);--link-color-hover: var(--dark-blue);--button-color: var(--white);--button-background-color: var(--brand-color);--button-background-hover: #4f31c7;--border-color: var(--light-blue);--border-color-alt: var(--light-blue);--th-color: var(--light-gray);--tr-color: var(--light-gray);--syntax-highlighting-background: #f3f3f3}:root[dark]{--brand-color: #0073ec;--white: #fff;--light-gray: #f0f0f0;--gray: #9e9e9e;--dark: #111016;--background-color: var(--dark);--background-alt-color: #1a1a1f;--text-color: var(--gray);--text-alt-color: var(--gray);--heading-font-color: var(--light-gray);--link-color: var(--light-gray);--link-color-hover: var(--light-gray);--button-color: var(--white);--button-background-color: var(--brand-color);--button-background-hover: #4f31c7;--border-color: #252629;--border-color-alt: #080b12;--th-color: #18181d;--tr-color: #080b12;--syntax-highlighting-background: #080b12}.list-reset{list-style-type:none;margin:0;padding:0}.clearfix::after,.clearfix ::before{content:"";display:table;clear:both}.screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px;word-wrap:normal !important}/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:rgba(0,0,0,0)}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-0.25em}sup{top:-0.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}body,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dd,ol,ul,fieldset,legend,figure,hr{margin:0;padding:0}li>ul,li>ol{margin-bottom:0}table{border-collapse:collapse;border-spacing:0}h1,h2,h3,h4,h5,h6,ul,ol,dl,blockquote,p,address,hr,table,fieldset,figure,pre{margin-bottom:32px}ul,ol,dd{margin-left:16px}ul li,ol li{margin-bottom:10px}.highlight{margin-bottom:32px;background:var(--syntax-highlighting-background)}.highlighter-rouge .highlight{background:var(--syntax-highlighting-background)}.highlight .c{color:#998;font-style:italic}.highlight .err{color:#a61717;background-color:#e3d2d2}.highlight .k{font-weight:bold}.highlight .o{font-weight:bold}.highlight .cm{color:#998;font-style:italic}.highlight .cp{color:#999;font-weight:bold}.highlight .c1{color:#998;font-style:italic}.highlight .cs{color:#999;font-weight:bold;font-style:italic}.highlight .gd{color:#000;background-color:#fdd}.highlight .gd .x{color:#000;background-color:#faa}.highlight .ge{font-style:italic}.highlight .gr{color:#a00}.highlight .gh{color:#999}.highlight .gi{color:#000;background-color:#dfd}.highlight .gi .x{color:#000;background-color:#afa}.highlight .go{color:#888}.highlight .gp{color:#555}.highlight .gs{font-weight:bold}.highlight .gu{color:#aaa}.highlight .gt{color:#a00}.highlight .kc{font-weight:bold}.highlight .kd{font-weight:bold}.highlight .kp{font-weight:bold}.highlight .kr{font-weight:bold}.highlight .kt{color:#5d76bf;font-weight:bold}.highlight .m{color:#099}.highlight .s{color:#ec2355}.highlight .na{color:teal}.highlight .nb{color:#0086b3}.highlight .nc{color:#5d76bf;font-weight:bold}.highlight .no{color:teal}.highlight .ni{color:purple}.highlight .ne{color:#900;font-weight:bold}.highlight .nf{color:#900;font-weight:bold}.highlight .nn{color:#555}.highlight .nt{color:#4d65dc}.highlight .nv{color:teal}.highlight .ow{font-weight:bold}.highlight .w{color:#bbb}.highlight .mf{color:#099}.highlight .mh{color:#099}.highlight .mi{color:#099}.highlight .mo{color:#099}.highlight .sb{color:#ec2355}.highlight .sc{color:#ec2355}.highlight .sd{color:#ec2355}.highlight .s2{color:#ec2355}.highlight .se{color:#ec2355}.highlight .sh{color:#ec2355}.highlight .si{color:#ec2355}.highlight .sx{color:#ec2355}.highlight .sr{color:#009926}.highlight .s1{color:#ec2355}.highlight .ss{color:#990073}.highlight .bp{color:#999}.highlight .vc{color:teal}.highlight .vg{color:teal}.highlight .vi{color:teal}.highlight .il{color:#099}.container{max-width:1140px;padding-left:16px;padding-right:16px;margin:0 auto}@media only screen and (max-width: 1140px){.container{max-width:1000px}}@media only screen and (max-width: 1024px){.container{max-width:740px}}@media only screen and (max-width: 768px){.container{max-width:560px}}@media only screen and (max-width: 576px){.container{max-width:480px;padding-left:calc(16px + 4px);padding-right:calc(16px + 4px)}}.row{display:flex;flex-wrap:wrap;flex:0 1 auto;flex-direction:row;box-sizing:border-box;margin-left:-16px;margin-right:-16px}.col{padding-left:16px;padding-right:16px}[class^=col-]{flex:auto}.col-0{width:0%}.col-1{width:8.3333333333%}.col-2{width:16.6666666667%}.col-3{width:25%}.col-4{width:33.3333333333%}.col-5{width:41.6666666667%}.col-6{width:50%}.col-7{width:58.3333333333%}.col-8{width:66.6666666667%}.col-9{width:75%}.col-10{width:83.3333333333%}.col-11{width:91.6666666667%}.col-12{width:100%}.push-0{margin-left:0%}.push-1{margin-left:8.3333333333%}.push-2{margin-left:16.6666666667%}.push-3{margin-left:25%}.push-4{margin-left:33.3333333333%}.push-5{margin-left:41.6666666667%}.push-6{margin-left:50%}.push-7{margin-left:58.3333333333%}.push-8{margin-left:66.6666666667%}.push-9{margin-left:75%}.push-10{margin-left:83.3333333333%}.push-11{margin-left:91.6666666667%}.push-12{margin-left:100%}.pull-0{margin-right:0%}.pull-1{margin-right:8.3333333333%}.pull-2{margin-right:16.6666666667%}.pull-3{margin-right:25%}.pull-4{margin-right:33.3333333333%}.pull-5{margin-right:41.6666666667%}.pull-6{margin-right:50%}.pull-7{margin-right:58.3333333333%}.pull-8{margin-right:66.6666666667%}.pull-9{margin-right:75%}.pull-10{margin-right:83.3333333333%}.pull-11{margin-right:91.6666666667%}.pull-12{margin-right:100%}@media(max-width: 1024px){.col-d-0{width:0%}.col-d-1{width:8.3333333333%}.col-d-2{width:16.6666666667%}.col-d-3{width:25%}.col-d-4{width:33.3333333333%}.col-d-5{width:41.6666666667%}.col-d-6{width:50%}.col-d-7{width:58.3333333333%}.col-d-8{width:66.6666666667%}.col-d-9{width:75%}.col-d-10{width:83.3333333333%}.col-d-11{width:91.6666666667%}.col-d-12{width:100%}.push-d-0{margin-left:0%}.push-d-1{margin-left:8.3333333333%}.push-d-2{margin-left:16.6666666667%}.push-d-3{margin-left:25%}.push-d-4{margin-left:33.3333333333%}.push-d-5{margin-left:41.6666666667%}.push-d-6{margin-left:50%}.push-d-7{margin-left:58.3333333333%}.push-d-8{margin-left:66.6666666667%}.push-d-9{margin-left:75%}.push-d-10{margin-left:83.3333333333%}.push-d-11{margin-left:91.6666666667%}.push-d-12{margin-left:100%}.pull-d-0{margin-right:0%}.pull-d-1{margin-right:8.3333333333%}.pull-d-2{margin-right:16.6666666667%}.pull-d-3{margin-right:25%}.pull-d-4{margin-right:33.3333333333%}.pull-d-5{margin-right:41.6666666667%}.pull-d-6{margin-right:50%}.pull-d-7{margin-right:58.3333333333%}.pull-d-8{margin-right:66.6666666667%}.pull-d-9{margin-right:75%}.pull-d-10{margin-right:83.3333333333%}.pull-d-11{margin-right:91.6666666667%}.pull-d-12{margin-right:100%}}@media(max-width: 768px){.col-t-0{width:0%}.col-t-1{width:8.3333333333%}.col-t-2{width:16.6666666667%}.col-t-3{width:25%}.col-t-4{width:33.3333333333%}.col-t-5{width:41.6666666667%}.col-t-6{width:50%}.col-t-7{width:58.3333333333%}.col-t-8{width:66.6666666667%}.col-t-9{width:75%}.col-t-10{width:83.3333333333%}.col-t-11{width:91.6666666667%}.col-t-12{width:100%}.push-t-0{margin-left:0%}.push-t-1{margin-left:8.3333333333%}.push-t-2{margin-left:16.6666666667%}.push-t-3{margin-left:25%}.push-t-4{margin-left:33.3333333333%}.push-t-5{margin-left:41.6666666667%}.push-t-6{margin-left:50%}.push-t-7{margin-left:58.3333333333%}.push-t-8{margin-left:66.6666666667%}.push-t-9{margin-left:75%}.push-t-10{margin-left:83.3333333333%}.push-t-11{margin-left:91.6666666667%}.push-t-12{margin-left:100%}.pull-t-0{margin-right:0%}.pull-t-1{margin-right:8.3333333333%}.pull-t-2{margin-right:16.6666666667%}.pull-t-3{margin-right:25%}.pull-t-4{margin-right:33.3333333333%}.pull-t-5{margin-right:41.6666666667%}.pull-t-6{margin-right:50%}.pull-t-7{margin-right:58.3333333333%}.pull-t-8{margin-right:66.6666666667%}.pull-t-9{margin-right:75%}.pull-t-10{margin-right:83.3333333333%}.pull-t-11{margin-right:91.6666666667%}.pull-t-12{margin-right:100%}}@media(max-width: 576px){.col-m-0{width:0%}.col-m-1{width:8.3333333333%}.col-m-2{width:16.6666666667%}.col-m-3{width:25%}.col-m-4{width:33.3333333333%}.col-m-5{width:41.6666666667%}.col-m-6{width:50%}.col-m-7{width:58.3333333333%}.col-m-8{width:66.6666666667%}.col-m-9{width:75%}.col-m-10{width:83.3333333333%}.col-m-11{width:91.6666666667%}.col-m-12{width:100%}.push-m-0{margin-left:0%}.push-m-1{margin-left:8.3333333333%}.push-m-2{margin-left:16.6666666667%}.push-m-3{margin-left:25%}.push-m-4{margin-left:33.3333333333%}.push-m-5{margin-left:41.6666666667%}.push-m-6{margin-left:50%}.push-m-7{margin-left:58.3333333333%}.push-m-8{margin-left:66.6666666667%}.push-m-9{margin-left:75%}.push-m-10{margin-left:83.3333333333%}.push-m-11{margin-left:91.6666666667%}.push-m-12{margin-left:100%}.pull-m-0{margin-right:0%}.pull-m-1{margin-right:8.3333333333%}.pull-m-2{margin-right:16.6666666667%}.pull-m-3{margin-right:25%}.pull-m-4{margin-right:33.3333333333%}.pull-m-5{margin-right:41.6666666667%}.pull-m-6{margin-right:50%}.pull-m-7{margin-right:58.3333333333%}.pull-m-8{margin-right:66.6666666667%}.pull-m-9{margin-right:75%}.pull-m-10{margin-right:83.3333333333%}.pull-m-11{margin-right:91.6666666667%}.pull-m-12{margin-right:100%}}@media(max-width: 1024px){.col-d-0{width:0%}.col-d-1{width:8.3333333333%}.col-d-2{width:16.6666666667%}.col-d-3{width:25%}.col-d-4{width:33.3333333333%}.col-d-5{width:41.6666666667%}.col-d-6{width:50%}.col-d-7{width:58.3333333333%}.col-d-8{width:66.6666666667%}.col-d-9{width:75%}.col-d-10{width:83.3333333333%}.col-d-11{width:91.6666666667%}.col-d-12{width:100%}.push-d-0{margin-left:0%}.push-d-1{margin-left:8.3333333333%}.push-d-2{margin-left:16.6666666667%}.push-d-3{margin-left:25%}.push-d-4{margin-left:33.3333333333%}.push-d-5{margin-left:41.6666666667%}.push-d-6{margin-left:50%}.push-d-7{margin-left:58.3333333333%}.push-d-8{margin-left:66.6666666667%}.push-d-9{margin-left:75%}.push-d-10{margin-left:83.3333333333%}.push-d-11{margin-left:91.6666666667%}.push-d-12{margin-left:100%}.pull-d-0{margin-right:0%}.pull-d-1{margin-right:8.3333333333%}.pull-d-2{margin-right:16.6666666667%}.pull-d-3{margin-right:25%}.pull-d-4{margin-right:33.3333333333%}.pull-d-5{margin-right:41.6666666667%}.pull-d-6{margin-right:50%}.pull-d-7{margin-right:58.3333333333%}.pull-d-8{margin-right:66.6666666667%}.pull-d-9{margin-right:75%}.pull-d-10{margin-right:83.3333333333%}.pull-d-11{margin-right:91.6666666667%}.pull-d-12{margin-right:100%}}@media(max-width: 768px){.col-t-0{width:0%}.col-t-1{width:8.3333333333%}.col-t-2{width:16.6666666667%}.col-t-3{width:25%}.col-t-4{width:33.3333333333%}.col-t-5{width:41.6666666667%}.col-t-6{width:50%}.col-t-7{width:58.3333333333%}.col-t-8{width:66.6666666667%}.col-t-9{width:75%}.col-t-10{width:83.3333333333%}.col-t-11{width:91.6666666667%}.col-t-12{width:100%}.push-t-0{margin-left:0%}.push-t-1{margin-left:8.3333333333%}.push-t-2{margin-left:16.6666666667%}.push-t-3{margin-left:25%}.push-t-4{margin-left:33.3333333333%}.push-t-5{margin-left:41.6666666667%}.push-t-6{margin-left:50%}.push-t-7{margin-left:58.3333333333%}.push-t-8{margin-left:66.6666666667%}.push-t-9{margin-left:75%}.push-t-10{margin-left:83.3333333333%}.push-t-11{margin-left:91.6666666667%}.push-t-12{margin-left:100%}.pull-t-0{margin-right:0%}.pull-t-1{margin-right:8.3333333333%}.pull-t-2{margin-right:16.6666666667%}.pull-t-3{margin-right:25%}.pull-t-4{margin-right:33.3333333333%}.pull-t-5{margin-right:41.6666666667%}.pull-t-6{margin-right:50%}.pull-t-7{margin-right:58.3333333333%}.pull-t-8{margin-right:66.6666666667%}.pull-t-9{margin-right:75%}.pull-t-10{margin-right:83.3333333333%}.pull-t-11{margin-right:91.6666666667%}.pull-t-12{margin-right:100%}}@media(max-width: 576px){.col-m-0{width:0%}.col-m-1{width:8.3333333333%}.col-m-2{width:16.6666666667%}.col-m-3{width:25%}.col-m-4{width:33.3333333333%}.col-m-5{width:41.6666666667%}.col-m-6{width:50%}.col-m-7{width:58.3333333333%}.col-m-8{width:66.6666666667%}.col-m-9{width:75%}.col-m-10{width:83.3333333333%}.col-m-11{width:91.6666666667%}.col-m-12{width:100%}.push-m-0{margin-left:0%}.push-m-1{margin-left:8.3333333333%}.push-m-2{margin-left:16.6666666667%}.push-m-3{margin-left:25%}.push-m-4{margin-left:33.3333333333%}.push-m-5{margin-left:41.6666666667%}.push-m-6{margin-left:50%}.push-m-7{margin-left:58.3333333333%}.push-m-8{margin-left:66.6666666667%}.push-m-9{margin-left:75%}.push-m-10{margin-left:83.3333333333%}.push-m-11{margin-left:91.6666666667%}.push-m-12{margin-left:100%}.pull-m-0{margin-right:0%}.pull-m-1{margin-right:8.3333333333%}.pull-m-2{margin-right:16.6666666667%}.pull-m-3{margin-right:25%}.pull-m-4{margin-right:33.3333333333%}.pull-m-5{margin-right:41.6666666667%}.pull-m-6{margin-right:50%}.pull-m-7{margin-right:58.3333333333%}.pull-m-8{margin-right:66.6666666667%}.pull-m-9{margin-right:75%}.pull-m-10{margin-right:83.3333333333%}.pull-m-11{margin-right:91.6666666667%}.pull-m-12{margin-right:100%}}@media(max-width: 1024px){.col-d-0{width:0%}.col-d-1{width:8.3333333333%}.col-d-2{width:16.6666666667%}.col-d-3{width:25%}.col-d-4{width:33.3333333333%}.col-d-5{width:41.6666666667%}.col-d-6{width:50%}.col-d-7{width:58.3333333333%}.col-d-8{width:66.6666666667%}.col-d-9{width:75%}.col-d-10{width:83.3333333333%}.col-d-11{width:91.6666666667%}.col-d-12{width:100%}.push-d-0{margin-left:0%}.push-d-1{margin-left:8.3333333333%}.push-d-2{margin-left:16.6666666667%}.push-d-3{margin-left:25%}.push-d-4{margin-left:33.3333333333%}.push-d-5{margin-left:41.6666666667%}.push-d-6{margin-left:50%}.push-d-7{margin-left:58.3333333333%}.push-d-8{margin-left:66.6666666667%}.push-d-9{margin-left:75%}.push-d-10{margin-left:83.3333333333%}.push-d-11{margin-left:91.6666666667%}.push-d-12{margin-left:100%}.pull-d-0{margin-right:0%}.pull-d-1{margin-right:8.3333333333%}.pull-d-2{margin-right:16.6666666667%}.pull-d-3{margin-right:25%}.pull-d-4{margin-right:33.3333333333%}.pull-d-5{margin-right:41.6666666667%}.pull-d-6{margin-right:50%}.pull-d-7{margin-right:58.3333333333%}.pull-d-8{margin-right:66.6666666667%}.pull-d-9{margin-right:75%}.pull-d-10{margin-right:83.3333333333%}.pull-d-11{margin-right:91.6666666667%}.pull-d-12{margin-right:100%}}@media(max-width: 768px){.col-t-0{width:0%}.col-t-1{width:8.3333333333%}.col-t-2{width:16.6666666667%}.col-t-3{width:25%}.col-t-4{width:33.3333333333%}.col-t-5{width:41.6666666667%}.col-t-6{width:50%}.col-t-7{width:58.3333333333%}.col-t-8{width:66.6666666667%}.col-t-9{width:75%}.col-t-10{width:83.3333333333%}.col-t-11{width:91.6666666667%}.col-t-12{width:100%}.push-t-0{margin-left:0%}.push-t-1{margin-left:8.3333333333%}.push-t-2{margin-left:16.6666666667%}.push-t-3{margin-left:25%}.push-t-4{margin-left:33.3333333333%}.push-t-5{margin-left:41.6666666667%}.push-t-6{margin-left:50%}.push-t-7{margin-left:58.3333333333%}.push-t-8{margin-left:66.6666666667%}.push-t-9{margin-left:75%}.push-t-10{margin-left:83.3333333333%}.push-t-11{margin-left:91.6666666667%}.push-t-12{margin-left:100%}.pull-t-0{margin-right:0%}.pull-t-1{margin-right:8.3333333333%}.pull-t-2{margin-right:16.6666666667%}.pull-t-3{margin-right:25%}.pull-t-4{margin-right:33.3333333333%}.pull-t-5{margin-right:41.6666666667%}.pull-t-6{margin-right:50%}.pull-t-7{margin-right:58.3333333333%}.pull-t-8{margin-right:66.6666666667%}.pull-t-9{margin-right:75%}.pull-t-10{margin-right:83.3333333333%}.pull-t-11{margin-right:91.6666666667%}.pull-t-12{margin-right:100%}}@media(max-width: 576px){.col-m-0{width:0%}.col-m-1{width:8.3333333333%}.col-m-2{width:16.6666666667%}.col-m-3{width:25%}.col-m-4{width:33.3333333333%}.col-m-5{width:41.6666666667%}.col-m-6{width:50%}.col-m-7{width:58.3333333333%}.col-m-8{width:66.6666666667%}.col-m-9{width:75%}.col-m-10{width:83.3333333333%}.col-m-11{width:91.6666666667%}.col-m-12{width:100%}.push-m-0{margin-left:0%}.push-m-1{margin-left:8.3333333333%}.push-m-2{margin-left:16.6666666667%}.push-m-3{margin-left:25%}.push-m-4{margin-left:33.3333333333%}.push-m-5{margin-left:41.6666666667%}.push-m-6{margin-left:50%}.push-m-7{margin-left:58.3333333333%}.push-m-8{margin-left:66.6666666667%}.push-m-9{margin-left:75%}.push-m-10{margin-left:83.3333333333%}.push-m-11{margin-left:91.6666666667%}.push-m-12{margin-left:100%}.pull-m-0{margin-right:0%}.pull-m-1{margin-right:8.3333333333%}.pull-m-2{margin-right:16.6666666667%}.pull-m-3{margin-right:25%}.pull-m-4{margin-right:33.3333333333%}.pull-m-5{margin-right:41.6666666667%}.pull-m-6{margin-right:50%}.pull-m-7{margin-right:58.3333333333%}.pull-m-8{margin-right:66.6666666667%}.pull-m-9{margin-right:75%}.pull-m-10{margin-right:83.3333333333%}.pull-m-11{margin-right:91.6666666667%}.pull-m-12{margin-right:100%}}.animate{animation:animateElement cubic-bezier(0.3, 0.45, 0.45, 0.95) .75s;animation-duration:.5s;animation-iteration-count:1;transition:transform .15s}@keyframes animateElement{0%{transform:translate(0px, 50px)}100%{transform:translate(0px, 0px)}}@keyframes pulse{0%{transform:scale(1, 1)}25%{transform:scale(1, 1)}50%{transform:scale(1.2, 1.2)}100%{transform:scale(1, 1)}}*,*::after,*::before{box-sizing:border-box}body{font-family:"Jost",Helvetica Neue,Helvetica,Arial,sans-serif;font-size:20px;line-height:1.5;overflow-x:hidden;color:var(--text-color);background-color:var(--background-color);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}@media only screen and (max-width: 576px){body{font-size:18px}}*::selection{color:var(--white);background-color:var(--brand-color)}h1,h2,h3,h4,h5,h6{font-family:"Jost",Helvetica Neue,Helvetica,Arial,sans-serif;font-weight:700;line-height:1.3;letter-spacing:-1px;color:var(--heading-font-color)}h1{font-size:36px}h2{font-size:28px}h3{font-size:24px}h4{font-size:20px}h5{font-size:18px}h6{font-size:16px}blockquote{position:relative;margin:40px 0;padding-left:26px;font-size:24px;line-height:1.7;font-weight:900;border-left:4px solid var(--brand-color);color:var(--heading-font-color)}blockquote p{margin-bottom:10px}blockquote cite{display:inline-block;margin-top:8px;font-size:14px;font-weight:700;font-style:normal;color:var(--heading-font-color)}@media only screen and (max-width: 576px){blockquote{font-size:21px}}pre{overflow:auto;padding:15px;margin-bottom:0;font-size:14px;white-space:pre-wrap;word-wrap:break-word;word-break:break-all;color:var(--heading-font-color)}img,.lightense-wrap{max-width:100%;height:auto;vertical-align:middle}img+em,.lightense-wrap+em,.gallery+em{display:block;margin-top:20px;font-size:12px;line-height:22px;font-style:normal;font-weight:normal;text-align:center;color:var(--heading-font-color)}img+em a,.lightense-wrap+em a,.gallery+em a{font-weight:500;border-bottom:1px solid var(--border-color);transition:all .35s}img+em a:hover,.lightense-wrap+em a:hover,.gallery+em a:hover{color:var(--link-color);border-color:var(--link-color-hover)}@media only screen and (max-width: 576px){img+em,.lightense-wrap+em,.gallery+em{margin-top:12px}}a{text-decoration:none;color:var(--link-color);transition:all .35s}a:hover{color:var(--link-color-hover)}hr{width:100%;height:1px;margin:60px 0;border:0;background:var(--background-alt-color)}.table-container{display:block;max-width:100%;overflow-x:auto}table{font-size:12px;color:var(--dark);width:100%;border-width:1px;border-color:var(--background-alt-color);border-collapse:collapse;color:var(--heading-font-color)}table th{padding:10px;font-size:16px;text-align:left;border:1px solid var(--th-color);color:var(--heading-font-color);font-weight:700;background-color:var(--th-color)}table tr{background-color:var(--tr-color);transition:all .3s ease}table tr:nth-child(even){background-color:rgba(0,0,0,0)}table td{padding:10px;font-size:14px;border:1px solid var(--background-alt-color)}.button{display:inline-block;padding:20px 26px;font-size:16px;font-weight:700;text-decoration:none;border-radius:2px;border:none;outline:none;cursor:pointer;transition:all .25s;color:var(--heading-font-color);background:var(--background-alt-color)}.button--primary{color:var(--white);background-color:var(--button-background-color)}.button--primary:hover{background:var(--button-background-hover)}.button--big{display:block;width:100%}.lazy{opacity:0;transition:opacity .3s ease-in-out}.lazy.loaded{opacity:1}.lightense-backdrop{background-color:var(--background-color) !important}.header .header__inner{position:relative;display:flex;align-items:center;flex-wrap:wrap;padding:44px 16px}@media only screen and (max-width: 1024px){.header .header__inner{padding:40px 16px}}@media only screen and (max-width: 576px){.header .header__inner{padding:32px 16px}}.logo__link{padding:4px 0;font-family:"Jost",Helvetica Neue,Helvetica,Arial,sans-serif;font-size:28px;letter-spacing:-1px;line-height:1;font-weight:700;transition:color .25s ease}.logo__link:hover{color:var(--brand-color)}.logo__image{max-height:50px}.main-nav{margin-left:auto}@media only screen and (max-width: 1024px){.main-nav{position:fixed;top:0;left:0;right:0;bottom:0;z-index:100;opacity:0;visibility:hidden;background-color:var(--background-color)}.main-nav.is-open{opacity:1;visibility:visible;transition:all .25s ease}.main-nav .nav__list{flex-direction:column;width:100%}.main-nav .nav__list .nav__item{display:block;margin:0}.main-nav .nav__list .nav__item.nav__item-icon{margin-right:0}.main-nav .nav__list .nav__item .nav__link{display:inline-block;padding:16px 0;font-size:18px;transition:color .25s ease}.main-nav .nav__list .nav__item .nav__link:hover{color:var(--brand-color)}}.main-nav__box{display:flex;align-items:center}.main-nav__box .nav__icon-close{display:none;justify-content:center;align-items:center;width:36px;height:36px;font-size:24px;line-height:1;border-radius:50%;color:var(--heading-font-color);background:var(--background-alt-color);cursor:pointer}.main-nav__box .nav__icon-close:hover .ion-md-close{transform:rotate(90deg)}.main-nav__box .nav__icon-close .ion-md-close{transition:all .35s}.main-nav__box .nav__title{display:none}@media only screen and (max-width: 1024px){.main-nav__box{display:block;align-items:center;width:80%;height:80vh;padding-top:180px;margin:0 auto;text-align:center;overflow-y:auto}.main-nav__box .nav__icon-close{display:flex;position:absolute;top:40px;right:40px}.main-nav__box .nav__title{display:inline-block;margin-bottom:12px;font-family:"Jost",Helvetica Neue,Helvetica,Arial,sans-serif;font-size:36px;font-weight:700;letter-spacing:-1px;color:var(--heading-font-color)}}@media only screen and (max-width: 768px){.main-nav__box{padding-top:100px}}.nav__list{display:flex;align-items:center}.nav__list .nav__item{display:inline-block;margin-right:48px;margin-bottom:0}.nav__list .nav__item.nav__item-icon{margin-right:12px}.nav__list .nav__item .nav__link{position:relative;padding:4px 0;font-size:16px;line-height:1;font-weight:700;transition:color .25s ease}.nav__list .nav__item .nav__link:hover{color:var(--brand-color)}.nav-button{font-size:21px;color:var(--link-color);cursor:pointer}.nav-button .icon__menu{display:none;margin-right:12px}.nav-button .icon__menu,.nav-button .icon__search{transition:color .25s ease}.nav-button .icon__menu:hover,.nav-button .icon__search:hover{color:var(--brand-color)}@media only screen and (max-width: 1024px){.nav-button{display:flex;align-items:center;margin-left:auto;font-size:24px}.nav-button .icon__menu{display:block}}.toggle-theme{position:relative;display:flex;justify-content:center;align-items:center;width:24px;height:24px;user-select:none;cursor:pointer}@media only screen and (max-width: 1024px){.toggle-theme{padding:20px 0}}.toggle-sun,.toggle-moon{position:absolute;font-size:20px;transition:color .25s ease;color:var(--heading-font-color)}.toggle-sun:hover,.toggle-moon:hover{color:var(--brand-color)}.toggle-sun{display:none}.dark-mode .toggle-sun{display:block}.dark-mode .toggle-moon{display:none}.search{position:fixed;top:0;left:0;right:0;bottom:0;z-index:-1;overflow:auto;opacity:0;background:var(--background-color);transition:all .25s ease}.search.is-visible{z-index:100;opacity:1;transition:all .25s ease}.search__box{max-width:540px;margin:0 auto;padding-top:120px}@media only screen and (max-width: 1024px){.search__box{padding-top:100px}}.search__group{position:relative;margin-bottom:48px}.search__group .search__close{position:absolute;right:28px;top:50%;transform:translateY(-50%);display:flex;align-items:center;justify-content:center;width:32px;height:32px;font-size:24px;line-height:1;border-radius:50%;color:var(--heading-font-color);cursor:pointer;will-change:transform;transition:all .25s;background:var(--background-color)}.search__group .search__close:hover{transform:translateY(-50%) rotate(90deg)}.search__group .search__close .ion-md-close{vertical-align:middle}.search__group .search__text{width:100%;padding:28px;font-size:20px;font-weight:700;line-height:24px;border:2px solid rgba(0,0,0,0);border-radius:2px;color:var(--heading-font-color);background-color:var(--background-alt-color);outline:0;transition:all .25s}.search__group .search__text::placeholder{font-weight:700;color:var(--heading-font-color)}.search__group .search__text:focus{border-color:var(--brand-color)}.search__group .search__text::-ms-clear{display:none}@media only screen and (max-width: 576px){.search__group{margin-bottom:32px}.search__group .search__text{padding:24px}}.search-results-list .no-results{width:100%;margin:0;text-align:center;color:var(--heading-font-color)}.pagination{margin-bottom:80px}@media only screen and (max-width: 576px){.pagination{margin-bottom:60px}}.pagination__inner{display:flex;justify-content:center;align-items:center}.pagination__list{display:flex;justify-content:space-between;align-items:center;width:100%;font-size:18px;font-weight:700;line-height:1;color:var(--text-color)}@media only screen and (max-width: 576px){.pagination__list{align-items:stretch;font-size:16px}}.pagination__item{display:flex;justify-content:center;align-items:center;width:100%;padding:24px 20px;text-align:center;border-radius:8px;background:var(--background-alt-color)}@media only screen and (max-width: 576px){.pagination__item{align-items:center;padding:20px;border-radius:8px}}.pagination__count{margin:0 32px;font-size:16px;color:var(--link-color)}@media only screen and (max-width: 768px){.pagination__count{margin:0 12px}}@media only screen and (max-width: 576px){.pagination__count{margin:0 8px;font-size:14px;line-height:1.2}}.pagination__next:hover,.pagination__prev:hover{color:var(--heading-font-color)}.pagination__next i,.pagination__prev i{font-size:15px;transition:transform .15s ease;will-change:transform}.pagination__next.disabled,.pagination__prev.disabled{opacity:.64;cursor:not-allowed;color:inherit}.pagination__next.disabled:hover i,.pagination__prev.disabled:hover i{transform:none}.dark-mode .pagination__next.disabled,.dark-mode .pagination__prev.disabled{opacity:.78}.pagination__next:hover i{transform:translateX(2px)}.pagination__next i{margin-left:5px}.pagination__prev:hover i{transform:translateX(-2px)}.pagination__prev i{margin-right:5px}.footer{margin-top:48px;background-color:var(--background-alt-color)}@media only screen and (max-width: 576px){.footer{margin-top:60px}}.footer__inner{padding:80px 0}.footer__inner .row .col{flex-grow:1}@media only screen and (max-width: 576px){.footer__inner{padding:60px 0}}@media only screen and (max-width: 1024px){.footer__author{margin-bottom:60px}}@media only screen and (max-width: 576px){.footer__author{margin-bottom:40px}}.footer__author-avatar{position:relative;width:105px;height:105px;margin-bottom:20px;transform:translate(0);border-radius:50%;overflow:hidden;box-shadow:0px 100px 80px rgba(0,0,0,.07),0px 12.5216px 10.0172px rgba(0,0,0,.035);background-color:var(--background-color)}.footer__author-avatar img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;user-select:none}.footer__author-name{margin-bottom:20px;font-size:32px;font-weight:900;line-height:1}.footer__author-bio{margin-bottom:0;color:var(--text-alt-color)}.social{margin-top:16px}.social .social__list{display:flex;align-items:center;flex-wrap:wrap}.social .social__list .social__item:first-child>.social__link{padding-left:0}.social .social__item{margin-bottom:0;margin-right:16px}.social .social__item:last-child{margin-right:0}.social .social__link{display:flex;align-items:center;padding:4px;font-size:20px;color:var(--heading-font-color)}.social .social__link:hover{color:var(--brand-color)}.footer__gallery .footer__gallery-title{margin-bottom:24px;font-size:28px}.footer__gallery .gallery__image img{height:100%;border-radius:8px;overflow:hidden}.footer__gallery .gallery__image img.lightense-open{border-radius:0}.footer__info{padding:44px 0;background-color:var(--background-color)}.footer__info .footer__info-box{display:flex;align-items:center;justify-content:space-between}@media only screen and (max-width: 1024px){.footer__info{padding:40px 0}}.copyright{margin-right:20px;font-size:14px;font-weight:500;color:var(--text-alt-color)}.copyright a{text-decoration:underline;text-decoration-color:rgba(0,0,0,0);color:var(--heading-font-color)}.copyright a:hover{text-decoration-color:var(--heading-font-color);color:var(--heading-font-color)}.top{min-width:36px;height:36px;font-size:20px;line-height:36px;text-align:center;border-radius:8px;color:var(--heading-font-color);background-color:var(--background-alt-color);cursor:pointer;transition:all .25s ease}.gallery-box{margin:32px 0}.gallery{display:grid;grid-template-columns:repeat(3, auto);justify-content:center;align-content:center;grid-gap:10px}.gallery .gallery__image{background:var(--background-color)}.gallery .gallery__image img{display:block;width:100%;height:auto;object-fit:cover}.article{margin-bottom:32px;will-change:transform;transition:transform .2s}.article:hover{transform:translateY(-3px)}.article:hover .article__title a{text-decoration:underline;text-decoration-color:var(--link-color-hover);text-decoration-thickness:2px}.article__head{position:relative}.article__date{position:absolute;z-index:1;top:16px;left:16px;display:inline-block;padding:8px 12px;font-size:12px;line-height:1;font-weight:500;border-radius:4px;color:var(--heading-font-color);background:var(--background-color);pointer-events:none}.article__image{position:relative;transform:translate(0);display:block;height:0;margin-bottom:24px;padding-bottom:62%;border-radius:8px;overflow:hidden;background:var(--background-alt-color)}.article__image img{position:absolute;width:100%;height:100%;object-fit:cover;user-select:none}.video-icon{position:absolute;z-index:1;top:50%;left:50%;width:50%;height:50%;transform:translate(-50%, -50%);pointer-events:none}.video-icon .circle{width:50px;height:50px;position:absolute;top:0;left:0;right:0;bottom:0;border-radius:50%;overflow:hidden;margin:auto;transform:scale(1, 1)}.video-icon .circle.pulse{animation-timing-function:ease;animation:pulse 2s infinite;background-color:rgba(255,255,255,.25)}.video-icon svg{fill:rgba(255,255,255,.25);stroke:var(--light-blue);stroke-linejoin:round;stroke-width:5;backdrop-filter:blur(3.5px);-webkit-backdrop-filter:blur(4.5px);transition:all .3s}.article__title{margin-bottom:12px;font-size:24px}.article__title a{text-decoration:underline;text-decoration-color:rgba(0,0,0,0);text-decoration-thickness:2px}.article__title a:hover{color:var(--heading-font-color)}.article__excerpt{margin-bottom:0;font-size:16px;color:var(--text-alt-color)}.contact-head{margin-bottom:32px}.form__group{margin-bottom:20px}.form__group:last-child{margin-bottom:0}.form__input{width:100%;padding:20px;font-size:16px;font-weight:400;border:2px solid var(--border-color);border-radius:2px;outline:0;transition:.25s ease-in-out;resize:vertical;color:var(--heading-font-color);background-color:var(--background-alt-color)}.form__input::placeholder{color:var(--text-alt-color)}.form__input:focus{border-color:var(--brand-color)}.section__head{position:relative;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:40px}.section__head::after{content:"";position:absolute;z-index:-1;display:block;width:100%;height:1px;background:var(--background-alt-color);pointer-events:none}@media only screen and (max-width: 768px){.section__head::after{content:none}}.section__title{padding-right:20px;margin-bottom:0;font-size:28px}@media only screen and (max-width: 576px){.section__title{font-size:24px}}.section__link{padding-left:20px;font-size:18px;font-weight:500;text-decoration:underline;text-decoration-color:rgba(0,0,0,0);color:var(--link-color);transition:text-decoration .35s}.section__link:hover{text-decoration-color:var(--heading-font-color);color:var(--link-color-hover)}@media only screen and (max-width: 768px){.section__link{padding-left:0}}@media only screen and (max-width: 576px){.section__link{font-size:16px}}.section__title,.section__link{background:var(--background-color)}@media only screen and (max-width: 576px){.section-tags .row .col:last-child>.tag-image{margin-bottom:0}}.tag-image{margin-bottom:32px;position:relative;transform:translate(0);display:block;height:0;padding-bottom:62%;border-radius:8px;overflow:hidden;background:var(--background-alt-color);transition:transform .2s}.tag-image:hover{transform:translateY(-3px)}.tag-image img{position:absolute;width:100%;height:100%;object-fit:cover;user-select:none}.tag-image .tag-name{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);z-index:1;max-width:90%;display:inline-block;padding:8px 12px;font-size:14px;line-height:1;font-weight:700;text-transform:capitalize;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border-radius:4px;color:var(--heading-font-color);background:var(--background-color);pointer-events:none}.post-head,.page-head{margin-bottom:48px}.post-head .row,.page-head .row{align-items:center}@media only screen and (max-width: 1024px){.post-head,.page-head{margin-bottom:40px}}@media only screen and (max-width: 576px){.post-head,.page-head{margin-bottom:32px}}.post-image,.page-image{position:relative;transform:translate(0);padding-top:90%;min-height:280px;border-radius:8px;overflow:hidden;background:var(--background-alt-color)}.post-image img,.page-image img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;user-select:none}@media only screen and (max-width: 1024px){.post-image,.page-image{padding-top:65%;margin-bottom:40px}}@media only screen and (max-width: 576px){.post-image,.page-image{margin-bottom:32px}}.page-image{padding-top:56.25%;margin-bottom:48px}@media only screen and (max-width: 1024px){.page-image{margin-bottom:40px}}@media only screen and (max-width: 576px){.page-image{margin-bottom:32px}}.post-video,.page-video{margin-bottom:48px;border-radius:8px;overflow:hidden;transform:translate(0);background-color:var(--background-alt-color)}.post-video .post-video__wrap,.post-video .page-video__wrap,.page-video .post-video__wrap,.page-video .page-video__wrap{position:relative;width:100%;height:0;padding-bottom:56.25%}.post-video .post-video__wrap iframe,.post-video .page-video__wrap iframe,.page-video .post-video__wrap iframe,.page-video .page-video__wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%}@media only screen and (max-width: 1024px){.post-video,.page-video{margin-bottom:40px}}@media only screen and (max-width: 576px){.post-video,.page-video{margin-bottom:32px}}.post__info{margin-left:44px}.post__info.post__info-video{max-width:760px;margin:0 auto}@media only screen and (max-width: 1024px){.post__info{margin-left:0}}.page__info{max-width:760px;margin:0 auto}.post__tags{display:flex;align-items:center;flex-wrap:wrap;margin-bottom:20px}.post__tags .post__tag{padding:12px 16px;margin:4px 8px 4px 0;font-size:14px;line-height:1;font-weight:500;text-transform:capitalize;border:none;border-radius:8px;color:var(--heading-font-color);transition:none;background-color:var(--background-alt-color)}.post__tags .post__tag:last-child{margin-right:0}@media only screen and (max-width: 576px){.post__tags{margin-bottom:16px}}.post__title,.page__title{margin-bottom:24px;font-size:46px;line-height:1.2;font-weight:900}@media only screen and (max-width: 576px){.post__title,.page__title{margin-bottom:20px;font-size:32px}}.page__title{margin-bottom:0}.post__meta{display:flex;align-items:center;line-height:1}.post__meta .post__author-image{position:relative;transform:translate(0);width:50px;height:50px;border-radius:50%;overflow:hidden;margin-right:12px;background-color:var(--background-alt-color)}.post__meta .post__author-image img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;user-select:none}.post__meta .post__meta-bottom{display:flex;flex-direction:column}.post__meta .post__author{display:inline-block;margin-bottom:7px;font-size:16px;font-weight:500;text-decoration:underline;text-decoration-color:rgba(0,0,0,0);color:var(--heading-font-color);transition:text-decoration-color .35s}.post__meta .post__author:hover{text-decoration-color:var(--heading-font-color)}.post__meta .post__date{font-size:14px;font-weight:400;color:var(--text-alt-color)}.post,.page{max-width:760px;margin:0 auto 60px;color:var(--text-color)}.post a,.page a{font-weight:500;color:#004cff;border-bottom:1px solid var(--border-color)}.post a:hover,.page a:hover{color:#06c;border-bottom-color:var(--link-color-hover)}.post img,.post .js-reframe,.page img,.page .js-reframe{border-radius:8px;overflow:hidden}.post img.lightense-open,.post .js-reframe.lightense-open,.page img.lightense-open,.page .js-reframe.lightense-open{border-radius:0}.post img[src$="#wide"],.page img[src$="#wide"]{display:block;width:100vw;max-width:none;margin-left:50%;transform:translateX(-50%);border-radius:0;pointer-events:none;user-select:none}.post .button,.page .button{border:none;text-decoration:none}.post__share .share__list{display:flex;align-items:center;width:100%}.post__share .share__item{width:25%;margin-right:8px;margin-bottom:0;text-align:center}.post__share .share__item:last-child{margin-right:0}.post__share .share__link{display:flex;justify-content:center;align-items:center;width:100%;height:54px;font-size:18px;text-transform:uppercase;border:none;border-radius:8px;background:var(--background-alt-color)}.post__share .share__link i{transition:transform .25s;will-change:transform}.post__share .share__link:hover{color:var(--heading-font-color)}.post__share .share__link:hover i{transform:scale(1.1)}.related-posts{display:none;margin-top:80px}.related-posts.is-related{display:block}.related-posts .related-tag{text-transform:capitalize}@media only screen and (max-width: 576px){.related-posts{margin-top:60px}.related-posts .row .col:last-child{margin-bottom:0}}.show-comments{margin:48px 0 32px;text-align:center}.show-comments .disqus-button{padding:28px;border-radius:8px;text-decoration:underline;text-decoration-color:rgba(0,0,0,0)}.show-comments .disqus-button:hover{text-decoration-color:var(--heading-font-color)}@media only screen and (max-width: 576px){.show-comments{margin:60px 0 0}.show-comments .disqus-button{padding:24px}}.post__comments{max-width:760px;margin:0 auto}.post__comments.is-open{margin:0 auto 32px}@media only screen and (max-width: 576px){.post__comments.is-open{margin:0 auto}}.error{text-align:center}.error .error__title{margin-bottom:24px;font-size:100px;line-height:1}.error .error__text{margin-bottom:0;color:var(--text-alt-color)}@media only screen and (max-width: 576px){.error .error__title{font-size:68px}}.recent-posts{margin-top:80px}@media only screen and (max-width: 576px){.recent-posts{margin-top:60px}.recent-posts .row .col:last-child{margin-bottom:0}}.tag__head{margin:80px 0}@media only screen and (max-width: 1024px){.tag__head{margin:40px 0}}.tags__inner{margin-bottom:120px}@media only screen and (max-width: 576px){.tags__inner{margin-bottom:60px}}.tag__title{margin-bottom:32px;font-size:46px;font-weight:900}@media only screen and (max-width: 576px){.tag__title{font-size:32px}}.tag__list{display:flex;align-items:center;flex-wrap:wrap;padding-bottom:80px;border-bottom:1px solid var(--background-alt-color)}.tag__list .tag__item{margin-right:12px;margin-bottom:12px}.tag__list .tag__item:last-child{margin-right:0}.tag__list .tag__link{display:block;padding:12px 16px;font-size:16px;font-weight:500;text-transform:capitalize;border-radius:8px;transition:none;background:var(--background-alt-color)}.tag__list .tag__link:hover{color:var(--heading-font-color)}@media only screen and (max-width: 576px){.tag__list{padding-bottom:48px}.tag__list .tag__item{margin-right:8px;margin-bottom:8px}.tag__list .tag__link{font-size:14px}}.tag__info{position:relative;display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}.tag__info::after{content:"";position:absolute;z-index:-1;display:block;width:100%;height:1px;background:var(--background-alt-color);pointer-events:none}@media only screen and (max-width: 576px){.tag__info::after{content:none}}.tag__info-box{display:flex;align-items:center}.tag__counter{display:flex;flex-direction:column;align-items:center;padding:12px 24px;border-radius:8px;color:var(--heading-font-color);background:var(--background-alt-color)}.tag__counter span{font-family:"Jost",Helvetica Neue,Helvetica,Arial,sans-serif;font-size:32px;font-weight:700;line-height:1}.tag__counter small{font-size:16px;font-weight:500}@media only screen and (max-width: 576px){.tag__counter{display:none}}.tag__name{padding:50px 20px 50px 20px;margin-bottom:0;font-size:36px;text-transform:capitalize;background-color:var(--background-color)}.tag__name span{font-weight:400;color:var(--text-alt-color)}@media only screen and (max-width: 768px){.tag__name{font-size:32px}}@media only screen and (max-width: 576px){.tag__name{padding:32px 12px 32px 0;font-size:26px}}.top__link{padding-left:20px;font-size:18px;font-weight:500;text-decoration:underline;text-decoration-color:rgba(0,0,0,0);color:var(--link-color);transition:text-decoration .35s;background:var(--background-color)}.top__link:hover{text-decoration-color:var(--heading-font-color);color:var(--link-color-hover)}@media only screen and (max-width: 576px){.top__link{padding-left:0;font-size:16px}}
+    </style>
+</head>
+
+<body>
+
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FG5QXJ66YZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-FG5QXJ66YZ');
+</script>
+    
+
+    <!-- begin header -->
+<header class="header" id="top">
+    <div class="container">
+        <div class="row">
+            <div class="header__inner col col-12">
+
+                <div class="logo">
+                    <a class="logo__link" href="/">
+                    
+                        <img class="logo__image" src="/images/logo/du-logo.jpg" alt="Bike Adventure Italy">
+                    
+                    </a>
+                </div>
+
+                <nav class="main-nav">
+                    <div class="main-nav__box">
+                        <div class="nav__icon-close">
+                            <i class="ion ion-md-close"></i>
+                        </div>
+                        <div class="nav__title">Menu</div>
+                        <ul class="nav__list list-reset">
+                            <li class="nav__item">
+                                <a href="/" class="nav__link">Home</a>
+                            </li>
+                            
+                                
+                            
+                                
+                                    
+                                    <li class="nav__item">
+                                        <a href="/about/" class="nav__link">About</a>
+                                    </li>
+                                    
+                                
+                            
+                                
+                                    
+                                    <li class="nav__item">
+                                        <a href="/contact/" class="nav__link">Contact</a>
+                                    </li>
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                            
+                            <li class="nav__item nav__item-icon">
+                                <div class="toggle-theme">
+                                    <div class="toggle-moon" title="Enable dark mode"><i class="ion ion-ios-moon"></i></div>
+                                    <div class="toggle-sun" title="Enable light mode"><i class="ion ion-ios-sunny"></i></div>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="nav-button">
+                    <i class="nav__icon icon__menu ion ion-md-menu"></i>
+                    <i class="nav__icon icon__search ion ion-md-search"></i>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+<!-- end header -->
+
+<!-- begin search -->
+<div class="search">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="search__box">
+          <div class="search__group">
+            <div class="search__close">
+              <i class="ion ion-md-close"></i>
+            </div>
+            <label for="js-search-input" class="screen-reader-text">Search for Blog</label>
+            <input type="text" id="js-search-input" class="search__text" autocomplete="off" placeholder="Type to search...">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row search-results-list" id="js-results-container"></div>
+  </div>
+
+</div>
+<!-- end search -->
+
+    <!-- begin content -->
+    <main class="content" aria-label="Content">
+        <div class="post-head">
+  <div class="container">
+    <div class="row">
+      
+      
+
+      
+      <div class="col col-6 col-d-12">
+        <div class="post-image">
+          <img class="lazy" data-src="/images/blogs/mitzi-brms.png" alt="Bayesian Data Analysis with BRMS (Bayesian Regression Models Using Stan)">
+        </div>
+      </div>
+      
+
+      
+      
+      
+      <div class="col col-6 col-d-12">
+        <div class="post__info ">
+  
+          
+            <div class="post__tags">
+              
+                <a href="/tags#rstats" class="post__tag">rstats</a>
+              
+            </div>
+          
+  
+          <h1 class="post__title">Bayesian Data Analysis with BRMS (Bayesian Regression Models Using Stan)</h1>
+  
+          <div class="post__meta">
+            <a href="/about/" class="post__author-image">
+              <img class="lazy" data-src="/images/logo/umb-trans.png" alt="Mattia Pacchin">
+            </a>
+
+            <div class="post__meta-bottom">
+              <a class="post__author" href="/about/">Mattia Pacchin</a>
+              <time class="post__date" datetime="2023-10-05T14:01:35+02:00">05 Oct 2023</time>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- begin post -->
+<div class="container animate">
+
+  <article class="post">
+
+    <div class="post__content">
+      <p>Summary posted by: <a href="https://www.linkedin.com/in/reshamas/">Reshama Shaikh</a></p>
+
+<h2 id="intro">Intro</h2>
+<p>Mitzi Morris, a Stan developer, shows how you can quickly build robust models for data analysis and prediction using BRMS (Bayesian Regression Models Using Stan). After a brief overview of the the advantages and limitations of BRMS and a quick review of multi-level regression. We will work through an R-markdown notebook together, to see how to fit, visualize, and test the goodness of the model and resulting estimates.</p>
+
+<p>The full transcript is below, following the timestamps.</p>
+
+<h2 id="video">Video</h2>
+<p>
+<iframe src="https://www.youtube.com/embed/A1NWoKQhgJE" loading="lazy" frameborder="0" allowfullscreen=""></iframe>
+</p>
+
+<h2 id="resources">Resources</h2>
+<ul>
+  <li><a href="https://github.com/generable/workshop-materials/raw/master/presentations/Bayesian_Multilevel_Modeling_brms_Stan.pdf">slides</a></li>
+  <li><a href="https://github.com/mitzimorris/brms_feb_28_2023">repo: Mitzi’s talk info</a></li>
+  <li><a href="https://youtu.be/INXMncbt09g">video: Mitzi’s talk on Software Engineering</a></li>
+  <li><a href="https://www.rladiesnyc.org/">R-Ladies New York</a></li>
+  <li><a href="https://paul-buerkner.github.io/brms/articles/index.html">BRMS article</a></li>
+  <li><a href="https://xcelab.net/rm/statistical-rethinking/">Statistical Rethinking</a></li>
+  <li><a href="https://journal.r-project.org/archive/2018/RJ-2018-017/RJ-2018-017.pdf">Journal R Project</a></li>
+  <li><a href="https://www.barelysignificant.com/slides/RGUG2019/#1">Barely Significant</a></li>
+  <li><a href="https://ourcodingclub.github.io/tutorials/brms">BRMS tutorails</a></li>
+  <li><a href="https://onlinelibrary.wiley.com/doi/pdf/10.1111/eth.13225">article</a></li>
+  <li><a href="https://mc-stan.org/users/documentation/case-studies/tutorial_rstanarm.html">tutorial rstanarm</a></li>
+</ul>
+
+<h2 id="section-timestamps-of-video">Section Timestamps of Video</h2>
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=A1NWoKQhgJE&amp;t=0s">00:00:00</a> R-Ladies NYC Intro</li>
+  <li><a href="https://www.youtube.com/watch?v=A1NWoKQhgJE&amp;t=295s">00:04:55</a> Data Umbrella Intro</li>
+  <li><a href="https://www.youtube.com/watch?v=A1NWoKQhgJE&amp;t=505s">00:08:25</a> Speaker Introduction - Mitzi Morris</li>
+  <li><a href="https://www.youtube.com/watch?v=A1NWoKQhgJE&amp;t=615s">00:10:15</a> What is BRMS? (Bayesian Regression Models Using Stan)</li>
+  <li><a href="https://www.youtube.com/watch?v=A1NWoKQhgJE&amp;t=675s">00:11:15</a> Three reasons to use BRMS</li>
+  <li><a href="https://www.youtube.com/watch?v=A1NWoKQhgJE&amp;t=831s">00:13:51</a> Bayesian Workflow Overview</li>
+  <li><a href="https://www.youtube.com/watch?v=A1NWoKQhgJE&amp;t=925s">00:15:25</a> Modeling Terminology and Notation</li>
+  <li><a href="https://www.youtube.com/watch?v=A1NWoKQhgJE&amp;t=1074s">00:17:54</a> Multilevel Regression</li>
+  <li><a href="https://www.youtube.com/watch?v=A1NWoKQhgJE&amp;t=1290s">00:21:30</a> Regression Models in R &amp; brief recent history of Bayesian programming languages</li>
+  <li><a href="https://www.youtube.com/watch?v=A1NWoKQhgJE&amp;t=1642s">00:27:22</a> Linear Regression</li>
+  <li><a href="https://www.youtube.com/watch?v=A1NWoKQhgJE&amp;t=1732s">00:28:52</a> Generalized Linear Regression</li>
+  <li><a href="https://www.youtube.com/watch?v=A1NWoKQhgJE&amp;t=1865s">00:31:05</a> Regression Formula Syntax in BRMS</li>
+  <li><a href="https://www.youtube.com/watch?v=A1NWoKQhgJE&amp;t=2073s">00:34:33</a> BRMS Processing Steps</li>
+  <li><a href="https://www.youtube.com/watch?v=A1NWoKQhgJE&amp;t=2233s">00:37:13</a> Notebook - link to online notebook and data</li>
+  <li><a href="https://www.youtube.com/watch?v=A1NWoKQhgJE&amp;t=2258s">00:37:38</a> Demo - in Markdown (.rmd)</li>
+  <li><a href="https://www.youtube.com/watch?v=A1NWoKQhgJE&amp;t=2298s">00:38:18</a> Load packages (readr, ggplot2, brms, bayesplot, loo, projprod, cmdstanr)</li>
+  <li><a href="https://www.youtube.com/watch?v=A1NWoKQhgJE&amp;t=2318s">00:38:38</a> Book - ARM</li>
+  <li><a href="https://www.youtube.com/watch?v=A1NWoKQhgJE&amp;t=2347s">00:39:07</a> Example - Multilevel hierarchical model (with EPA radon dataset)</li>
+  <li><a href="https://www.youtube.com/watch?v=A1NWoKQhgJE&amp;t=2432s">00:40:32</a> Further description of radon</li>
+  <li><a href="https://www.youtube.com/watch?v=A1NWoKQhgJE&amp;t=2497s">00:41:37</a> Regression model</li>
+  <li><a href="https://www.youtube.com/watch?v=A1NWoKQhgJE&amp;t=2522s">00:42:02</a> Demo - data example</li>
+  <li><a href="https://www.youtube.com/watch?v=A1NWoKQhgJE&amp;t=2546s">00:42:26</a> 3 Modeling Choices</li>
+  <li><a href="https://www.youtube.com/watch?v=A1NWoKQhgJE&amp;t=2671s">00:44:31</a> Choice 1 - Complete Pooling Model (simple linear regression formula)</li>
+  <li><a href="https://www.youtube.com/watch?v=A1NWoKQhgJE&amp;t=2902s">00:48:22</a> Choice 2 - No Pooling Model (not ideal)</li>
+  <li><a href="https://www.youtube.com/watch?v=A1NWoKQhgJE&amp;t=3017s">00:50:17</a> Choice 3 - Partial Pooling Model</li>
+  <li><a href="https://www.youtube.com/watch?v=A1NWoKQhgJE&amp;t=3386s">00:56:26</a> Q&amp;A - How to compare the different models? (run loo)</li>
+  <li><a href="https://www.youtube.com/watch?v=A1NWoKQhgJE&amp;t=3600s">01:00:00</a> Q&amp;A - Does BRMS have options for checking model assumptions?</li>
+  <li><a href="https://www.youtube.com/watch?v=A1NWoKQhgJE&amp;t=3660s">01:01:00</a> Q&amp;A What were the default priors? (student T-distribution with 3 degrees of freedom)</li>
+  <li><a href="https://www.youtube.com/watch?v=A1NWoKQhgJE&amp;t=3927s">01:05:27</a> References</li>
+</ul>
+
+<h2 id="about-the-speaker">About the Speaker</h2>
+<h3 id="bio">Bio</h3>
+<p>Mitzi Morris is a member of the Stan Development Team and serves on the Stan Governing Body. Since 2017 she has been a full-time Stan developer, working for Professor Andrew Gelman at Columbia University, where she has contributed to the core Stan C++ platform and developed CmdStanPy, a modern Python interface for Stan. She is also as an active Stan user, developing, publishing, and presenting on Bayesian models for disease mapping. Prior to that she has worked as a software engineer in both academia and industry, working on natural language processing and search applications as well as data analysis pipelines for genomics and bioinformatics.</p>
+
+<h3 id="connect-with-the-speaker">Connect with the Speaker</h3>
+<ul>
+  <li>GitHub: <a href="https://github.com/mitzimorris">@mitzimorris</a></li>
+</ul>
+
+<hr />
+
+<h2 id="transcript">Transcript</h2>
+
+<h4 id="0000-intro">00:00 Intro</h4>
+<p>Reshama: Hello, everyone. Welcome to Data Umbrella and our collaboration with R-Ladies New York City webinar today. First of all, we’re going to have the R-Ladies introduction and I’d like to introduce you all to Dorota Ritzik and she is going to share a bit about the R-Ladies community particularly the New York City Chapter. So, welcome Dorota.</p>
+
+<h4 id="0025-r-ladies-nyc-intro">[00:25] R-Ladies NYC Intro</h4>
+
+<p>Dorota: Thank you. Yes. Hi, everybody. I’m here to just give a very quick intro to R-Ladies and what we’re about and I am one of the lead organizers for R-Ladies NYC, the New York City Chapter. So, there’s R-Ladies Global which I’ll talk about it a little bit at first and then I’ll go into more detail about our specific chapter. So, what is R Ladies? R-Ladies is a worldwide organization that promotes gender diversity in our community via meetups and mentorships in a friendly and a safe environment. And our mission is to have more women and non-binary coders, developers, speakers, and leaders in our community. We believe firmly that more diversity, equity, inclusion of people developing our packages and being a part of our community is a fantastic thing and that’s what we strive for. And R-Ladies Global is huge.</p>
+
+<p>We have a ton of chapters all over the world. I am actually not 100% sure when this image was taken. So, it’s possible there are even more chapters at this point but we are everywhere and it’s actually not that hard to get involved. If you don’t have a local chapter where you live, there’s a way to very easily start one. So, I highly recommend looking into that. To do that, you can just send an email to info@Rladies.org to get in touch. You can follow R-Ladies on social media, on Twitter, LinkedIn, and yeah, you can follow all these different chapters from all over the world. It’s great. It’s a really wonderful community to be a part of.</p>
+
+<p>So more about R-Ladies NYC. We were founded around 2017. So, several years after R-Ladies initially began and was already in several different places both in the US and beyond.</p>
+
+<p>A few fun facts. So, we currently have actually we’re up to like 2900 members on meetup at this point. So, it’s quite large. That said, we don’t always have a huge turnout at meetup events. So, don’t be discouraged by that very large number. We host events monthly and contacting us is really easy. You can check out our website, “RLadiesNYC.org”. You could find us on meetup or on Twitter and LinkedIn and there on the left is a list of our current board members, our wonderful group of R-Ladies that helps make these monthly events possible.</p>
+
+<p>So, join us. We host meetup events like presenters giving talks both technical and professional development talks. We host a book club. We host networking and social events and we typically try to attend a few conferences here and there and it’s great. It’s wonderful. We have a wide variety of ways to participate.</p>
+
+<p>And speaking of participating, here are few ways to get involved. First and foremost, attend our meetups, follow us on Twitter and other social media pages. Join our Slack Channel and GitHub pages. And ask questions. You could even write a blog post for our website if you want to try your hand with that. We are always encouraging folks who haven’t really written or presented on about our technical topic before to get involved. So, please reach out if you’re interested in either of those options. And like I mentioned earlier, you could also sponsor a local chapter if you don’t have one near you. Or join the board of the New York City Chapter if you’re in the area. And most importantly, spread the word and tell your friends. We are always looking for more R-Ladies to join our community. Here’s some information and that is it. That’s the end of my presentation.</p>
+
+<p>[04:40] Laura: Okay. So, Reshma, you’re muted?</p>
+
+<p>[04:45] Reshama: Yes, I’m going to do the Data Umbrella introduction. Hang on.</p>
+
+<p>[04:48] Laura: Okay, sorry, sorry, sorry.</p>
+
+<p>[04:50] Reshama: That’s okay. Slides, there we go. Okay.</p>
+
+<h4 id="0455-data-umbrella-intro">04:55 Data Umbrella Intro:</h4>
+<p>Hey, everybody. So, I’m going to introduce the data umbrella part of it. We’re really happy to do this co-promotion and co organization with R-Ladies. It’s been something we’ve wanted to do for a while. So, I’m going to do a brief introduction. Mitzi will do a presentation and you can ask any questions in the chat and we will answer them as a good time to stop and answer. This is being recorded and the video will be available on YouTube typically within 24 hours.</p>
+
+<p>Data Umbrella is a community for underrepresented persons in data science and we are a non-profit organization. This is the team of Data Umbrella. We are in a few different countries around the world and there’s a bunch of people that make it happen behind the scenes. We have a code of conduct and we thank you for helping to making a welcoming, friendly, professional environment for everybody. There are various ways to support Data Umbrella. One of those ways is to follow our code of conduct. Another way that you can do it is to ask general questions and share job events and postings.</p>
+
+<p>You can also donate to our nonprofit. We are an open collective and if you work for a company that uses Benevity which is company match donations, that’s another way to make a donation. You can subscribe to the Data Umbrella YouTube channel. We have over 80 videos there on all different data science topics and we have over 2000 subscribers. We have a bunch of playlists. One of them is career advice. We have playlists such as data visualization contributing to open source, scikit-learn, PyMC emcee, and NumPy.</p>
+
+<p>We also have a monthly newsletter and I’ll share the link in the chat to find out about upcoming events and announcements. Our website which we are in the process of redesigning at the moment has a lot of resources on open-source conferences allyship language. We encourage you to check it out.</p>
+
+<p>We’re on all social media platforms as Data Umbrella. The place to find out about upcoming events is meetup. I’ve mentioned YouTube and the newsletter and Twitter and LinkedIn are the two platforms where we are the most active.</p>
+
+<p>This webinar platform is big marker and then on the top you’ll see a CC for closed captioning, so you can have live transcripts enabled for this presentation if you would like.</p>
+
+<p>We have a call for volunteers. So, for all of our videos we add timestamps. So, if you’re available to add time stamps, I’ll share the link to it for this video or some other videos. You can add those timestamps on GitHub.</p>
+
+<p>We also have a feedback form which you’ll find in the handout section and that is I’ll also share the link once I’m finished speaking and if you have any technical issues or suggestions for future event topics or any general feedback.</p>
+
+<p>We have couple of upcoming events in March. The first one is what’s a sales engineer from a data science of computer science background. That’s going to be a very fascinating talk and on March 21st, we have MLOps from concept to product.</p>
+
+<h4 id="0825-speaker-introduction---mitzi-morris">08:25 Speaker Introduction - Mitzi Morris:</h4>
+<p>Today’s talk is Bayesian Data Analysis with BRMS with Mitzi Morris who is a returning speaker. Mitzi is a member of the Stan Development Team and serves on the Stan Governing Body. Since 2017, she’s been a full-time Stan developer working for Professor Andrew Gelman at Columbia University where she has contributed to the Core Stan C++ platform and developed CmdStanPy, a modern python interface for Stan. She’s also an active Stan user developing, publishing, and presenting on Bayesian Models for disease mapping. Prior to that, she has worked as a software NG in both academia and industry working on natural language processing and search applications as well as data analysis pipelines for genomics and bioinformatics. Feel free to tweet about this event at Data Umbrella. And with that, I will turn off my mic and video and hand over the screen shared to Mitzi.</p>
+
+<h4 id="0924-mitzi-morris">[09:24] Mitzi Morris:</h4>
+<p>Thank you so much for that really great introduction and yes, I used to do natural language processing which is what we’re not going to talk about today. Today, we’re going to talk about Bayesian data analysis with BRMS and yes. So, I as a Stan developer have not really used BRMS, but BRMS is just really, I think well, it’s the most widely used interface of the Stan interfaces, so/and it is absolutely fantastic. So, why don’t I keep going with my slides so we can make this all very concrete and clear for you.</p>
+
+<h4 id="1015-what-is-brms-bayesian-regression-models-using-stan">10:15 What is BRMS? (Bayesian Regression Models Using Stan):</h4>
+<p>So, BRMS stands for Bayesian Regression and multi-level modeling in Stan. The developer who started this project is Paul Berkner. He’s German which I think is why multi-level modeling is such one-word noun phrase in that particular use of multi-level modeling. BRMS package uses the R-formula Syntax which if you’re familiar with are and fitting regression models in R. This is the general syntax that’s used to fit to describe a model, a regression model. And so, snippet of code here we’re going to go through and get to see how BRMS works. But first, some more background.</p>
+
+<h4 id="1115-three-reasons-to-use-brms">11:15 Three reasons to use BRMS:</h4>
+<p>So, the question here is why should I use BRMS? If you want to do Bayesian modeling, if you want to do regression modeling, you should use BRMS. If you’re working in R and you’re at all, you’ve heard about Stan then you should actually learn about BRMS. Because BRMS simplifies model development and it uses the extended R-formula syntax to specify the likelihood. It has a function set prior to specify the priors on all the parameters and the BRMS package has lots and lots and lots of checks so that you can make sure that your model is actually fitting your data. And the downstream analysis packages that are also part of the Stan ecosystem, bayesplot, projpred and loo.</p>
+
+<p>Bayesplot is the package that gives you plotting, lets you visualize everything in your fitted model. Projpred is used to investigate the particular of interest in your model and it’s helping you see what kinds of predictions those particular parameters are going to make for you. And loo stands for (Leave One Out) cross validation and loo is a tool for comparing different models. BRMS generated Stan programs are efficient and robust. So, if you have a data set and you know how you would like to model your data. You have some idea of the multi-level model that you want. Which of the predictors are going to be most relevant which of the predictors have some kind of grouping structure. Working with BRMS is very nice, because you can quickly try out a lot of different variations on how much of the problem you want to put into your model and then with BRMS, you write a whole bunch of models and you can use the downstream analysis packages to do the model comparison.</p>
+
+<h4 id="1351-bayesian-workflow-overview">13:51 Bayesian Workflow Overview:</h4>
+<p>And this in a nutshell is the Bayesian workflow. The Bayesian workflow, a lot of times when you’re learning about Stan or learning about a problem set in doing Bayesian data analysis, the model is presented to you. And you’re taught the model, the structure of the model, how it fits in with the data, and how well it works with your data set. But what you need to understand is that model development is the first piece of the puzzle. The second piece of the puzzle is model comparison. Some models are going to be too simple. They’re easy to write, simple to understand but they don’t really work that well. Some models are too complex. Some models are difficult to fit or some models are going to by building in too much complexity in your model, you might build a model that gives you a very good analysis for the data set that you have. But it might be overfitting, because you’ve just put too much stuff in it.</p>
+
+<p>And so, you want to do model development. You want rapid model development. You want to be able to specify a lot of models very quickly and then you want to be able to do model comparison and to do that BRMS package and its friends give you everything you need.</p>
+
+<h4 id="1525-modeling-terminology-and-notation">15:25 Modeling Terminology and Notation:</h4>
+<p>And here’s just a little bit of modeling terminology and notation because you’re going to see these terms and you’re going to see some of this notation everywhere. So, I feel like we always have to go through the slide. We’re talking about data and when we say data Y. We’re talking about all of the data. We’re not making a distinction between your outcome and your predictors. When we talk about Theta, we mean all the parameters in your model and we’re building a Bayesian model. So, we’re build a joint probability distribution over all the data and the parameters and when you write a stand program, Stan is solving the joint probability density. So, it’s fitting all of the parameters all at once.</p>
+
+<p>Now, the important things to keep your eye on when you’re doing Bayesian modeling is this notion of the prior probability distribution, P of Theta. This is what you know about your problem before any data are observed, and then P of Theta given why the posterior probability distribution is what you’ve learned from your data. So, it’s the probability of the parameters being what you’ve estimated them to be conditional on the data that you’ve seen with that starting point of P of Theta, what you already knew before you started fitting the data to the model.</p>
+
+<p>The thing that we’re really talking about though is the probability of why given theta, the probability of the data given the parameters. And when you know the data, when you’re fitting your model, this is the model’s likelihood. Once you fitted your model and you’ve got an estimate for Theta which is fixed, this is your sampling distribution and you use this sampling distribution to generate new data or I mean to fit new, to make predictions for new previously unseen data. So, these are our terms and the things that we’re going to be talking about are prior, our posterior probability distribution, and our likelihood.</p>
+
+<h4 id="1754-multilevel-regression">17:54 Multilevel Regression:</h4>
+<p>“Multi-level regression”, I’m quoting here Richard McElreath, if you haven’t read statistical rethinking this is the book that we recommend to absolutely everybody. “Statistical Rethinking” is going to make statistics. It’s designed to make thinking about statistics far less confusing than it probably has been in any statistics class that you’ve taken. So, get “Statistical Rethinking” and read it and the argument that McElreath makes is that multi-level regression is the default form of regression because multi-level regression models handle structured data and almost all of your data has some structure. Your observations can sometimes be repeated from the same source or else they’re ordered or there’s some group structure in the data.</p>
+
+<p>So, example of group structure is a hierarchical model where you have students in classrooms, classrooms are in a school, schools are in districts, districts are in states, states are in regions. And each of those nested areas is going to probably make the data from that particular school be of a certain flavor. So, we expect that when there’s a hierarchical structure, we’re getting a little bit of information from node above your bottom most, your leaf note in the tree. We’re getting information from all of those contributing to your observation. Or if you have say an auto, regressive you have time series data where the next item depends on the previous several items possibly.</p>
+
+<p>Spatial data where you have some observation a we expected to be sort of similar to observations that are neighboring, spatio-temporal where we blow the whole thing out into one big 4D. It’s my neighbor because it happened to the time slice right before me in the region right next to me and the volume around me. So, these are all examples of structured data and multi-level models let you say more about the data. We can estimate the variation on all levels of the model and with the multi-level structure, we can also say, well, what if I have a new group. And then I can say well I don’t know what you know, I don’t know anything about the items in this new group. But if I know about the items in other similar groups, I can reason about unseen groups. And what you find though is once we start building these multi-level models, your big data suddenly isn’t so big anymore because you’ve put all of these qualifiers on every data observation and this makes working with a multi-level model both more interesting and more challenging.</p>
+
+<h4 id="2130-regression-models-in-r--brief-recent-history-of-bayesian-programming-languages">21:30 Regression Models in R &amp; brief recent history of Bayesian programming languages:</h4>
+<p>So, the history of regression models in R. From somebody who spends most of her time programming in C++ and Python is like this. We have the pre-existing packages. By preexisting, I mean pre-Stan which are LM and GLM for linear models and generalized linear models which handle single level linear models. And these are part of the base are statistics package and then you have lme4 which is designed to handle higher hierarchical linear models. The goal of the Stan Project which was started in 2010 was to build a better lme4. Andrew Gelman and Jennifer Hill in 2006, 2007 put out a really fabulous book “Multi-level Regression”, “Regression Analysis in Hierarchical Models”. I forget what the exact title is. It’s in a subsequent slide. What’s really interesting about that book is that in Gilman and Hill, they present a lot of data sets with lme4 syntax and our code actually.</p>
+
+<p>And the fact of the matter is that those models can’t really be fit with lme4. It doesn’t really do the right thing on the data and Andrew’s point was that this is what I want lme4 to do. So, then if you later he hired some post docs to build a better lme4. And the result was the Stan probabilistic programming language and the NUTS-HMC algorithm which gives you a much more efficient way of doing Monte Carlo, Markov Chain Monte Carlo samplers, but that’s not what this talk is about. So, all I can say is we use on the back end and Stan fits your model using back-end algorithm which for the best inference is going to be NUTS-HMC. And the problem is that Stan was designed by computer scientists and so the Stan probabilistic programming language while it builds on BUGS has been relatively challenging for statisticians to work with. It’s a programming language. It looks a bit for both and it’s difficult to actually code up a model that does what you think it’s going to do. It’s very easy to put bugs in your BUGS.</p>
+
+<p>BUGS by the way, BUGS stands for (Bayesian Uncertainty Under Gibbs Sampling). And when I tell this to non-statisticians who’ve never heard of BUG, they think it’s really the best name for a programming language ever. But BUGS basically really changed the course of Bayesian modeling. It made it very easy for people to write down their models because prior to BUGS, you had to write not just your model but your Gibbs samplers. So, that really set it for a pretty high bar for people who wanted to do Bayesian data analysis. With BUGS, Bayesian data analysis really took off and Stan I think has helped everybody brought it along another order of magnitude.</p>
+
+<p>So, BRMS was developed in about 2016 by Paul Berkner and the goal was to simplify model specification to relieve statisticians of the need to write stand programs. Instead, it appeals to our users because it uses lme4 style formulas and R-functions to wrap Stan. So, you can work in R, but you get the goodness of Stan and the comfort of thinking about your models in a way that if you were used to using lm, glm or lme4, a way that you’re used to if you’re a data analysis doing statistical modeling in R.</p>
+
+<p>I should also mention that RStanARM is a package which gives you precompiled Stan models and it’s similar to BRMS and Spirit in that with RStanARM, if there’s a package that you’ve been using in R for a particular kind of model, RStanARM probably has a version of that model that has a precompiled Stan model on the back end and that will probably do a better job of analyzing your data than the package that it’s replacing. And by better, I mean it will be faster and it will scale to larger data sets. So, this is sort of the landscape of packages and so when I talk about BRMS to the R-Ladies, I’m hoping that most of you are going to be relatively familiar with working with of regression package in R. but if you’re not, please stay tuned. I’ll show you how it’s done.</p>
+
+<h4 id="2722-linear-regression">27:22 Linear Regression:</h4>
+<p>Linear regression, this is just a quick review of linear regression. So, and I’m got this slide here because I just want everybody to sort of be really clear on the terms that I’m going to be throwing around when we get to the notebook. So, we’ve got a linear model. We specify the linear model. In linear regression, we’re trying to fit a line to or multiplane or a multiplane to some set of observations. And the definition of a line isn’t intercept with the slope, and there’s some amount of noise. If we assume that this noise is independent for every observation, then we’ve got the guts, we’ve got the specification of a linear model. So, the linear model is written where we say that every observation YI is drawn from a normal observation which is centered at α β alpha plus beta times XI with variance sigma. So, sigma is that error term that we see in the formula above in the equation in the first equation and alpha plus beta XI is our linear predictor, sigma is the variance term.</p>
+
+<h4 id="2852-generalized-linear-regression">28:52 Generalized Linear Regression:</h4>
+<p>In a generalized linear regression, we’re going to kick it up a level. So, instead of assuming a normal distribution, we can use any distributional family. And I’ve bolded family because you’ll see, well, actually, you won’t see but family is what you specify when you’re using glm package or the lme4 package or BRMS to talk about some other distribution. So, you can talk about a beta distribution, a Poisson distribution if your data is discreet Poisson. And the variance parameter sigma when we’re talking about a normal distribution is going to be any family specific parameter Theta. And we can generalize our linear predictor alpha plus beta XI to Ada, which we just mean any linear predictor. And we transform our linear predictor by an inverse link function so that’s where we’re getting the generalized linear modeling, that’s our link function coming into play. And then we can use group level subscripts on our parameters to allow for the structure in the data to make our model multi-level or hierarchical.</p>
+
+<p>So, given all of that, we just have the equation specification for general multi-level model which says that YI is drawn from some distributional family and we have R-function, our inverse link function applied to our linear predictor Ada and there should an XI there in that subscript, but there isn’t. And we have some distributional parameters, Theta. But what we really are going to be talking about when we’re working with BRMS and thinking about the models that we’re fitting in BRMS are the intercept and the slope terms in our linear predictors.</p>
+
+<h4 id="3105-regression-formula-syntax-in-brms">31:05 Regression Formula Syntax in BRMS:</h4>
+<p>So, this is the regression formula syntax. This is the very first example I had in that first call to the BRM function in BRMS. Reaction is distributed with according to an intercept term and the number of days and actually I don’t even want to try to explain what this guy is saying. I just want you to observe that this is a formula that on the left-hand side we have reaction, and on the right-hand side, we have a specification for our linear predictor. And in the linear predictor because we’re building a multi-level model. We have things which are population level terms, fixed effects and those are parameters where we don’t differentiate. They’re the same parameter for every observation no matter what group membership it might have in the structure of the data whereas group level terms which are sometimes called random effects vary by grouping factor.</p>
+
+<p>So, we’re going to start putting subscripts on our parameters to talk about which group a parameter is applied, being applied to. And in BRMS, we have these group level terms where we say coefficients vertical bar group. By coefficients, we mean the terms in the linear predictor. So, if you think of the intercept is being the first column in your design matrix or your set of predictors, the intercept term is just designated by one and everything is going to be designated by the column label that it has in the predictor in your data frame which is your set of predictors. So, here in this sleep study which is where this example comes from. One of the columns in the sleep study data is labeled reaction. One of the columns is day, one of the columns is subject.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>So, when we say (1+Days</td>
+      <td>subject) what we mean is that the subject is the grouping factor and we’re going to see that both the intercept term and the days, the slope of the days are varying with the grouping factor. I hope that wasn’t too confusing and we’ll show a whole bunch of examples when we get to the notebook.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="3433-brms-processing-steps">34:33 BRMS Processing Steps:</h4>
+<p>What BRMS actually does is quite impressive. BRMS is writing a Stan program for you. So, you just call the BRM function and to call the BRM function, you specify your formula, you specify your data, you specify your distributional family if it’s not gaussian by default, and you can specify all kinds of priors. Prior specification is a whole talk in and of itself. So, I’m not going to say anything about priors here. You specify all of these things and then, the BRM call feeds all of that into make Stan code and make Stan data then so it generates a Stand model using the Stand, a model written in the stand probabilistic programming language. That is then going to have to be compiled to C++.</p>
+
+<p>So, the model code, the data, and all sorts of additional arguments which BR BRMS is putting into your call are passed to a back end. The back end can be either cmdstanr or it can be RStan, but you should probably be at this point using cmdstanr. It’s the modern interface, the modern R interface to stand. It’s more robust and it supports the latest version of Stan and it’s more scalable. I mean, for it can handle bigger models and more data. But otherwise under the hood it’s all Stan goodness. It doesn’t matter if you like to use our Stand, keep using RStan. The model is compiled and fitted in Stan and then BRMS does post processing and post processing is reversing a lot of the magic that goes into compiling up writing that Stan model.</p>
+
+<p>So basically, it’s translating all of the names of things that are fit inside the Stan model, back to the names that you specified when you in your formula and are used in your data set. And then all the results can be investigated using all sorts of our methods in the BRMS package or the bayesplot, projpred or loo package.</p>
+
+<h4 id="3713-notebook---link-to-online-notebook-and-data">37:13 Notebook - link to online notebook and data:</h4>
+<p>And whoa, there should be a link to that notebook but don’t worry, we are going to now jump into the demo part of the live demo part of this talk. So, this is the notebook in my screen.</p>
+
+<h4 id="3738-demo---in-markdown-rmd">37:38 Demo - in Markdown (.rmd):</h4>
+<p>I don’t know if putting it into full screen mode will make it bigger. I hope so. So, I’m just going to work through this little, our markdown document. So, the first thing we’re going to do is do some stuff that I always put into a notebook. And we’re going to load all the packages that you might want. I not actually using ggplot2 in this notebook, but never hurts to have ggplot2.</p>
+
+<h4 id="3818-load-packages-readr-ggplot2-brms-bayesplot-loo-projprod-cmdstanr">38:18 Load packages (readr, ggplot2, brms, bayesplot, loo, projprod, cmdstanr):</h4>
+<p>So, we’re going to load the BRMS, the bayesplot, the loo, the projpred, and cmdstanr. Although, you probably don’t need to load. Well, I don’t know if you need to load cmdstanr. So, we’re going to load everybody.</p>
+
+<h4 id="3838-book--arm">38:38 Book – ARM:</h4>
+<p>The book that Andrew and Jennifer wrote in 2006 is “Data Analysis Using Regression and Multilevel Hierarchical Models”. Andrew refers to that as by short hand as ARM applied regression modeling. It’s a really great book and it makes a lot of things very clear if you’re at all interested in a really lucid discussion of causal inference. I highly recommend this book.</p>
+
+<h4 id="3907-example---multilevel-hierarchical-model-with-epa-radon-dataset">39:07 Example - Multilevel hierarchical model (with EPA radon dataset):</h4>
+<p>And the example that they wait till chapters 11 &amp; 12 to get to actual multi-level hierarchical models. And one of the first example data sets they use is the radon level dataset, which is a dataset that I did my previous talk on and in the chat earlier, there’s a link Lubliana lecture that’s more digging into what’s going on with that particular dataset. Which is an old historical dataset that’s mainly of interest to play around with hierarchical models. So, this was a national level survey. Andrew and Jennifer analyze data for the state of Minnesota, which consists of 919 measurements from residential houses from 85 counties. And the measurements were taken either in the basement or on the ground floor and although it’s not entirely clear, I’m pretty sure that if the house had a basement, the measurement was taken in the basement. So, the only times that a measurement would have been taken on the ground floor in a house is if there no basement. And another EPA data set provides the soil uranium level for each county.</p>
+
+<h4 id="4032-further-description-of-radon">40:32 Further description of radon:</h4>
+<p>So why is this interesting? Radon gas is a carcinogen that happens to be particularly deadly if you’re a smoker. So, if you’re a smoker and you have a house that has a basement and you’re living in the basement and there’s no better ventilation, your chance of contracting lung cancer somewhere along the way goes up really astronomically. So, nowadays, modern building codes and general awareness of radon has made this much less of a problem. Thanks in part to this EPA activity in the 1990s. So, radon gas comes from the ground. It’s a byproduct of uranium decay. Uranium is radioactive and it has a very very long half-life, decaying slowly. One of those products of uranium decay is radon.</p>
+
+<h4 id="4137-regression-model">41:37 Regression model:</h4>
+<p>And the regression model is going to try to predict the home radon level on the log scale. Based on the county in which the house is located, the floor on which the measurement was taken and the amount of soil uranium for that county. So, the data looks like this.</p>
+
+<h4 id="4202-demo---data-example">42:02 Demo - data example:</h4>
+<p>We have the floor, the county name, the amount of data, the log radon level, the log uranium level which as you can see is uniform across the county, and the county ID which is a factor which will be very useful when we’re trying to group by county ID.</p>
+
+<h4 id="4226-3-modeling-choices">42:26, 3 Modeling Choices:</h4>
+<p>So, the modeling choices that we have, to completely pull all the data across the state of Minnesota. So, we’re going to do a single regression, average home radon level in Minnesota is based on all 919 observations. Or we can try to use county information and a stupid model is the no-pooling model where we run 85 separate regressions to estimate the home radon levels by county. So, we just say as much data as I have on a county, that’s as much data as I’m going to use to figure out what’s going on in that county and then we have partial pooling, a multi-level model. Counties are similar. So, we’re going to build a multi-level regression which says that we’re going to share information across all counties.</p>
+
+<p>For every county, we estimate what’s going on in that county, but at the hierarchical one level up we say that all counties are drawn from a distribution for that is a county distribution. So, that there’s a certain amount, there’s a certain location that we expect, certain set of parameters that are common hyper parameters in the model. Which say that, okay, for any county in Minnesota we sort of expected to have this general characteristic. We expect a certain radon level and we expect a certain amount of variants across the county and given that hype, that set of hyper parameters, then we’re going to estimate what’s going on in each individual county.</p>
+
+<h4 id="4431-choice-1---complete-pooling-model-simple-linear-regression-formula">44:31 Choice 1 - Complete Pooling Model (simple linear regression formula):</h4>
+<p>So, the complete pooling model is just a simple linear aggression formula. And so, in BRMS, the BRM function, all we need to do, the first argument to the BRM function is the formula. The formula is very simple here and the data set is the Minnesota radon data set. So, we can just run that and what going to happen? Well, actually we’re going to see a little bar. Right now, this is the C++ compiler compiling the generated Stan code. As soon as it’s done compiling it, this model runs like lightning because it’s a really, really, really simple model and it runs four chains using the NUTS-HMC sampler and then, it gives us the summary of how well it fit that model. So, for this gaussian family that works and we’re just doing the simple the not simple but we’re doing yeah, we are doing a simple linear regression where we expect everything to be distributed normally.</p>
+
+<p>We have the identity, the links here. This is your generalized linear model links where we’re using the identity function for both the MU and the sigma of the gaussian. The formula is log radon is distributed according to the floor. The level on which the measurement is taken and we have estimate for the models intercept and for the floor. And this all makes perfect sense because the way that things are coded, the basement is coated as floor zero and ground floor is coded as floor one. And we know that radon gas, the levels of radon gas increase the lower you go in a building. So, we expect the slope of the regression line to be negative. Meaning, that if you’re in the basement, your radon level will probably be higher than if you’re on the ground floor and there’s a certain amount of variants here. That’s our sigma parameter.</p>
+
+<p>We can visualize what’s going on by using the BRMS conditional effects on (fit_complete_pool). And that is going to give us a beautiful plot. The floor is actually discrete. So, it’s either zero or it’s one, but here you see the regression line in blue and the amount of uncertainty that’s about the 50% interval around the regression line in dark gray. So, if you’re in the basement, your log radon level is going to be higher than if you’re taking the measure on the ground floor, and this confidence that the uncertainty grows because we have far fewer measurements which are taken on the ground floor. Pretty much 80% of the measurements in this data set were taken in the basement. Because in Minnesota, most homes that were in the survey had basements.</p>
+
+<h4 id="4822-choice-2---no-pooling-model-not-ideal">48:22 Choice 2 - No Pooling Model (not ideal):</h4>
+<p>The no pooling model looks kind of silly because it’s silly. So, what we’re doing here in this formula is we’re saying there is no general intercept and that is because for each county we’re going to have its own intercept. So, we can fit that model too. And again, we can see that BMS has generated the Stan code and C++ is compiling the Stan code, takes a few seconds to do that. Takes like zero time to run the model and now, we get oh yeah. So, if we look at this, let’s look at this in the output window. Oh no, we definitely want to look at this here. This is so beautiful. This is the conditional effects plot for when we have 85 separate intercepts.</p>
+
+<p>So, we’ve got a linear regression model and if we go up to the previous one of these guys, here we see if we pull all of the data, we only have a single regression line. Here, we’re saying that we’re going to still use the floor as the slope of the line and we’re having 85 different intercepts. So, we get 85 different beautiful lines that are all parallel and I think this is just really fabulous. This is also a really stupid model and you don’t want to do it.</p>
+
+<h4 id="5017-choice-3---partial-pooling-model">50:17 Choice 3 - Partial Pooling Model:</h4>
+<p>So, let’s move on to the first model which we say that we want to have a partial pooling model where we’re going to pull information between counties but for every county, we’re going to estimate its own intercept. So, this is what the formula looks like in BRMS and now we can fit this model. And when we’re done fitting the model, again, it takes the thing that takes the longest when running BRMS is just the C++ compiler translating your model to C++. Because the C++ compiler is doing a lot of optimizations so that your resulting model will run will be performant. And this plot the base plot MCMC interval plot here we’re just plotting the county level the estimates for the county level regression parameter.</p>
+
+<p>So, we have 85 different parameters, one per county and what’s going on in this plot which is not actually that easy to read, because there are 85 things is that four counties which have a lot of observations, we get much tighter 50% intervals around the estimated mean. And in this data set, there are very few counties in Minnesota where all the people live. They’re essentially the counties for the Minnesota, Saint Paul, and also for Duluth. The rest of Minnesota is really rural and so for most counties, you have three or four maybe five observations, which is why you want to be building a multi-level model because you need to pull your information across your regions. And then finally, we have the [INAUDIBLE WORD 52:26] which is the varying slope varying intercept model. Which says that, okay, for every county we expect that the floor effect, the slope might be different for that county as well as the intercept term. So, then we can fit this model and we can do exactly the same plots.</p>
+
+<p>And I think we’re getting almost to 8 o’clock. I don’t know how much longer I have to talk here, but one more example and then we will be ready for questions. So, now the sampling is actually taking a little bit longer because this is a more complicated model. It has more levels. It has more parameters and it has more hard choices to make. So, if we look at what’s going on here, this plot doesn’t look that much. Well, actually it looks quite a bit different than this plot. Things are moving around and what we see is that the regression now is pulling ever more closer to the center, the means now are pulling more together. So, you’re getting more and more pulling especially down here.</p>
+
+<p>And finally, we can add in one more predictor. The “log uranium”, which is the same across all observations in the county. We can see what adding log uranium is going to do to this model. So, this is a varying slope varying intercept model adding in another predictor the log uranium and we don’t need to do anything on the county level for log uranium because log uranium is already on a per county level. Although you know play around with it by all means don’t take my word for it. See what happens if you add log uranium into this group level effects. And adding log uranium, does it change things? It does, yes. It pulls things way more towards the center. So, that’s pretty much it.</p>
+
+<h4 id="5621-reshama">[56:21] Reshama:</h4>
+<p>Hey, Mitzi. We have a question which is, how do you compare the different models?</p>
+
+<h4 id="5626-mitzi-morris">[56:26] Mitzi Morris:</h4>
+<p>Oh, yes. Perfect question. Yes. Great.</p>
+
+<h4 id="5626-qa---how-to-compare-the-different-models-run-loo">56:26 Q&amp;A - How to compare the different models? (Run loo):</h4>
+<p>So, am I still sharing my R screen?</p>
+
+<p>[56:31] Reshama: Yes.</p>
+
+<h4 id="5632-mitzi-morris">[56:32] Mitzi Morris:</h4>
+<p>Okay. So, now we’ve got, well, we’ll just go over here. We’re done with the notebook. So, thank you. This is the last, this should be the list, selling the notebook, so you’re going to add it yourself. So, we’ve now got these various fits, right? Now, if we say, now we’re going to run the loo function and so, what this is saying is that, you’ve asked me the right question. But we’re all going to have to together read the documentation for the loo package to understand what these estimates are doing and what it is saying is that, you know what? I’m not really sure. Let’s try it, a simpler one. The loo function is designed specifically to compare your models. So, the short answer to your question is you run loo.</p>
+
+<p>[58:19] Reshama: Hey, Mitzi. Another question is this RMD available on Git? I did link to your GitHub. Is this the same exact R markdown file that people can access.</p>
+
+<p>[58:33] Mitzi Morris: Oh yeah, I put it on my GitHub repo, yes.</p>
+
+<h4 id="5835-reshama-okay-got-it-and-then-another-question-that-came-up-is-can-brms-be-used-for-non-hierarchical-data-structure-and-non-regression-type-of-analysis">[58:35] Reshama: Okay got it. And then another question that came up is can BRMS be used for non-hierarchical data structure and non-regression type of analysis?</h4>
+
+<p>[58:51] Mitzi: It can definitely be used for non-hierarchical data structure. So, there are plenty of multi-level models which are not hierarchical and a non-regression, what do you mean by a non-regression type of analysis? The answer there is no. The package is about regression. And how to view the trace of the parameters. To view the trace of the parameters, we can do something like plot. And I think this will give you, yeah. What is that doing? Not so bad. There you get some nice trace plots.</p>
+
+<h4 id="010000-qa---does-brms-have-options-for-checking-model-assumptions">01:00:00 Q&amp;A - Does BRMS have options for checking model assumptions?</h4>
+<p>Reshama: Another question here is does BRMS have options for checking model assumptions?</p>
+
+<p>[01:00:07] Mitzi Morris: What do you, yes, definitely. That is all about the prior predictive checking. So, your model assumptions essentially are your priors and BRMS has functions for prior predictive checks and it has posterior predictive checks. And yes, checking your model assumption is very, very, very important and that’s really part of the cool stuff of the generated Stan code for BRMS. It anticipates that you’re going, it generates a Stan program that has everything you need to do the model checking and the posterior. Oh, thank you. Thank you, Richard Montes.</p>
+
+<h4 id="010100-qa-what-were-the-default-priors-student-t-distribution-with-3-degrees-of-freedom">01:01:00 Q&amp;A What were the default priors? (Student T-distribution with 3 degrees of freedom):</h4>
+<p>I know it’s not in scope, but curious what priors were used. These are the default priors. The default priors here are a student T distribution with three degrees of Freedom and Paul Berkner works a lot with Akivatari, one of the key Stan developers. Key contributors, coauthor of Bayesian Data Analysis and he’s very interested in the effect of the priors. And so, you can specify whatever prior makes sense and there are a lot of different theories about what a good prior firm model is. The prior really depends on your data. So, you shouldn’t rely on the default priors but the default priors are chosen to be very robust. And over the course of the time that the Stan project has existed, we’ve learned so much more about how these models behave, because we can fit more complex models with more different kinds of data and with larger datasets.</p>
+
+<p>We’ve learned a lot about the behavior of what priors are good. And the difference between Hamiltonian Monte Carlo, the HMC algorithm that is used by the Stan MCMC sampler and the pre generation of MCMC samplers, the Gibbs samplers is that for Gibbs sampling, you had to choose certain kinds of priors just so that the Gibbs sampler didn’t fall over and the Hamiltonian Monte Carlo algorithm behaves very differently. So, there was a lot a lot of discussion and investigation that’s gone into what makes a good prior. And what is recommended as a good prior for a model has changed a lot from say 2007 when Gelman &amp; Hill use all sorts of interesting priors in that text to now. And the priors are specified that Carlos wants to know how the priors are specified.</p>
+
+<p>Laura, I’m really sorry. I don’t know how you can use this in Excel, but Carlos wants to know how the priors are specified. The priors are specified via an argument to the BRM function and you create something called BRMS prior object. So, the BRMS documentation will tell you everything you need to know about how to specify your priors and there’s several exam and vignettes in the BRMS documentation that should help you. They’re written by academic researchers. They have a certain flavor but if you look around and ask questions on the Stand discourse, you should be able to do just fine. Anything else.</p>
+
+<p>[01:04:47] Reshama: Last call for questions if anybody has any questions. Meanwhile, I’ll read some of the comments which is thank you for the great talk. “Thank you, Mitzi. This was an incredibly approachable introduction”.</p>
+
+<p>[01:05:02] Mitzi Morris: So glad to hear it. Thank you all. Great questions.</p>
+
+<p>[01:05:13] Reshama: Alright.</p>
+
+<p>[01:05:15] Mitzi Morris: Oh, oh, oh, I want to share one more thing.</p>
+
+<p>[01:05:07] Reshama: Go ahead.</p>
+
+<p>[01:05:18] Mitzi Morris: My final slide. I think I need to go to slide 13.</p>
+
+<h4 id="010527-references">01:05:27 References</h4>
+<p>Because these are everything that you should read next. So yeah, take a screenshot and check out some of those URLs and the slides and the notebook are up on GitHub for you.</p>
+
+<p>[01:05:57] Reshama: Mitzi, thank you so much for the excellent talk. Everybody, thank you for joining us and the video will be available very soon. Have a great evening, morning, wherever you are. Bye everybody and thanks Dorota.</p>
+
+
+    </div>
+
+    <div class="post__share">
+      <ul class="share__list list-reset">
+        <li class="share__item">
+          <a class="share__link share__twitter"
+            href="https://twitter.com/intent/tweet?text=Bayesian%20Data%20Analysis%20with%20BRMS%20(Bayesian%20Regression%20Models%20Using%20Stan)&url=http://localhost:4000/mitzi-brms"
+            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+            title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
+        </li>
+        <li class="share__item">
+          <a class="share__link share__facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/mitzi-brms"
+            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+            title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
+        </li>
+        <li class="share__item">
+          <a class="share__link share__linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/mitzi-brms&title=Bayesian%20Data%20Analysis%20with%20BRMS%20(Bayesian%20Regression%20Models%20Using%20Stan)&summary=Quickly%20build%20robust%20models%20for%20data%20analysis%20and%20prediction%20using%20BRMS&source=Bike%20Adventure%20Italy"
+          onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
+        </li>
+      </ul>
+    </div>
+
+
+  </article>
+</div>
+<!-- end post -->
+
+
+
+
+
+
+
+<!-- begin related posts -->
+<div class="container">
+    <section class="related-posts is-related animate">
+        <div class="row">
+            <div class="col col-12">
+                <div class="container__inner">
+                    <div class="section__info">
+                        <div class="section__head">
+                            <h2 class="section__title">You may also like</h2>
+                            <a class="section__link" href="/blog">
+                                
+                                
+                                    
+                                        <a href="/tags#rstats" class="section__link related-tag">See all<span> rstats</span></a>
+                                    
+                                
+                            
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                    
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+
+                            <div class="article col col-4 col-d-6 col-t-12">
+  <div class="article__inner">
+
+    <div class="article__head">
+      <time class="article__date" datetime="2021-09-15T14:01:35+02:00">15 Sep 2021</time>
+
+      
+      <div class="video-icon">
+        <div class="circle pulse"></div>
+        <div class="circle">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <polygon points="40,30 65,50 40,70"></polygon>
+          </svg>
+        </div>
+      </div>
+      
+
+      
+      <a class="article__image" href="/covid-19-r-dashboard-in-production.mds-us-stronger">
+        <img class="lazy" data-src="/images/blogs/italy-dashboard.png" alt="COVID-19 R Dashboard in Production">
+      </a>
+      
+
+    </div>
+
+    <div class="article__content">
+
+      <h2 class="article__title">
+        <a href="/covid-19-r-dashboard-in-production.mds-us-stronger">COVID-19 R Dashboard in Production</a>
+      </h2>
+
+      
+      <p class="article__excerpt">Rami Krispin - This talk focuses on a holistic approach for deploying data science projects into production (e.g., CI/CD) with the use of open-source and free tools such as R, bash, Docker, Github Actions, etc.</p>
+      
+
+    </div>
+  </div>
+</div>
+
+                        
+                                
+                            
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                        
+                        
+            
+                        
+            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<!-- end related posts -->
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <!-- begin comments -->
+<div class="show-comments">
+  <button class="button disqus-button" id="show-comments-button" onclick="disqus();return false;">Show Comments</button>
+</div>
+
+<div id="disqus_thread" class="post__comments">
+  <div id="disqus_empty"></div>
+</div>
+
+<script>
+  var disqus_loaded = false;
+  var disqus_shortname = 'demo-menca';
+  var disqus_container = document.getElementById("disqus_thread");
+  function disqus() {
+    if (!disqus_loaded) {
+      disqus_loaded = true;
+      var e = document.createElement("script");
+      e.type = "text/javascript";
+      e.async = true;
+      e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+      (document.getElementsByTagName("head")[0] ||
+        document.getElementsByTagName("body")[0])
+        .appendChild(e);
+      // Hide the button after opening
+      document.getElementById("show-comments-button").style.display = "none";
+      // Show disqus comments
+      disqus_container.classList.add("is-open");
+    }
+  }
+</script>
+
+<noscript>Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<!-- end comments --> 
+      </div>
+    </div>
+  </div>
+
+
+    </main>
+    <!-- end content -->
+
+    <!-- begin footer -->
+<footer class="footer">
+
+    <div class="footer__inner">
+        <div class="container">
+            <div class="row">
+
+                <div class="col col-5 col-d-12">
+                    <div class="footer__author">
+                        <div class="footer__author-avatar">
+                            <img class="lazy" data-src="/images/logo/umb-trans.png" alt="Mattia Pacchin">
+                        </div>
+                        <h3 class="footer__author-name">Mattia Pacchin</h3>
+                        <p class="footer__author-bio">IT, DIY and MTB lover. I built a wooden pc holder for my bicycle handlebar to program while riding on my favorite trails.</p>
+                        
+                        <div class="social">
+                            <ul class="social__list list-reset">
+                                
+                                <li class="social__item">
+                                    <a class="social__link" href="https://www.youtube.com/@PacsRiders" target="_blank" rel="noopener"
+                                        aria-label=" link"><i class="ion ion-logo-youtube"></i></a>
+                                </li>
+                                
+                                <li class="social__item">
+                                    <a class="social__link" href="https://www.linkedin.com/in/mattia-pacchin-255802167/" target="_blank" rel="noopener"
+                                        aria-label=" link"><i class="ion ion-logo-linkedin"></i></a>
+                                </li>
+                                
+                                <li class="social__item">
+                                    <a class="social__link" href="https://www.facebook.com/Pacchinmattia" target="_blank" rel="noopener"
+                                        aria-label=" link"><i class="ion ion-logo-facebook"></i></a>
+                                </li>
+                                
+                                <li class="social__item">
+                                    <a class="social__link" href="https://www.instagram.com/mattiapacchin/" target="_blank" rel="noopener"
+                                        aria-label=" link"><i class="ion ion-logo-instagram"></i></a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                
+                <div class="col col-6 push-1 col-d-12 push-d-0">
+                    <div class="footer__gallery">
+                        <h3 class="footer__gallery-title">Gallery</h3>
+                        
+                        <div class="gallery-footer">
+                            <div class="gallery" style="grid-template-columns: repeat(3, auto);">
+                                
+                                <div class="gallery__image">
+                                    <img src="/images/bayes/bayes1.jpg" alt="Rest" loading="lazy">
+                                </div>
+                                
+                                <div class="gallery__image">
+                                    <img src="/images/bayes/bayes2.JPG" alt="Bayes" loading="lazy">
+                                </div>
+                                
+                                <div class="gallery__image">
+                                    <img src="/images/bayes/bayes3.JPG" alt="Bayes2" loading="lazy">
+                                </div>
+                                
+                                <div class="gallery__image">
+                                    <img src="/images/bayes/bayes4.jpg" alt="Bayes3" loading="lazy">
+                                </div>
+                                
+                                <div class="gallery__image">
+                                    <img src="/images/bayes/du-background-img.jpg" alt="Rest" loading="lazy">
+                                </div>
+                                
+                                <div class="gallery__image">
+                                    <img src="/images/timeseries/ts4.jpg" alt="Hobby" loading="lazy">
+                                </div>
+                                
+                                <div class="gallery__image">
+                                    <img src="/images/timeseries/ts2.jpeg" alt="Fashion" loading="lazy">
+                                </div>
+                                
+                                <div class="gallery__image">
+                                    <img src="/images/timeseries/ts3.jpg" alt="Notes" loading="lazy">
+                                </div>
+                                
+                                <div class="gallery__image">
+                                    <img src="/images/timeseries/ts1.jpeg" alt="Rest" loading="lazy">
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer__info">
+        <div class="container">
+            <div class="row">
+                <div class="col col-12">
+                    <div class="footer__info-box">
+                        <div class="copyright">2024 &copy; <a href="/">Bike Adventure Italy</a>. Crafted & Designed by <a href="https://jekyllthemes.io/developers/artem-sheludko">Artem Sheludko</a>.</div>
+                        <div class="top" title="Top"><i class="ion ion-ios-arrow-up"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+<!-- end footer -->
+
+
+    <script src="/js/scripts.js"></script>
+    <script src="/js/common.js"></script>
+</body>
+
+</html>
