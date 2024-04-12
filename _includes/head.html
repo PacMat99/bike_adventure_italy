@@ -16,33 +16,12 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-
-    <!-- Ionicons -->
-    <link rel="preload" href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" as="style">
-
-    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
-
     <!-- Swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
     <script>
-        {% if site.color_scheme == "auto" %}
-        if (localStorage.getItem("theme") === "dark") {
-            document.documentElement.setAttribute("dark", "");
-            document.documentElement.classList.add('dark-mode');
-        }
-        {% elsif site.color_scheme == "light" %}
-            document.documentElement.setAttribute("light", "");
-            document.documentElement.classList.add('light-mode');
-        {% elsif site.color_scheme == "dark" %}
-            document.documentElement.setAttribute("dark", "");
-            document.documentElement.classList.add('dark-mode');
-        {% else %}
-        if (localStorage.getItem("theme") === "dark") {
-            document.documentElement.setAttribute("dark", "");
-            document.documentElement.classList.add('dark-mode');
-        }
-        {% endif %}
+        document.documentElement.setAttribute("light", "");
+        document.documentElement.classList.add('light-mode');
     </script>
 
     <style>

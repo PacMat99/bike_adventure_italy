@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function() {
         searchInput = document.querySelector(".search__text"),
         search = document.querySelector(".search"),
         searchBox = document.querySelector(".search__box"),
-        toggleTheme = document.querySelector(".toggle-theme"),
         btnScrollToTop = document.querySelector(".top");
 
 
@@ -63,20 +62,6 @@ document.addEventListener("DOMContentLoaded", function() {
             darkMode();
         });
     };
-
-
-    // Theme Switcher
-    function darkMode() {
-        if (html.classList.contains('dark-mode')) {
-            html.classList.remove('dark-mode');
-            localStorage.removeItem("theme");
-            document.documentElement.removeAttribute("dark");
-        } else {
-            html.classList.add('dark-mode');
-            localStorage.setItem("theme", "dark");
-            document.documentElement.setAttribute("dark", "");
-        }
-    }
 
 
     // =====================

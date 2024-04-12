@@ -5,14 +5,12 @@ logo: '/images/logo/du-logo.jpg'
 description: Scopri i migliori tracciati ciclistici dell'Italia, immergiti nella cultura locale e unisciti alla nostra comunità appassionata.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://bikeadventureitaly.it" # the base hostname & protocol for your site, e.g. http://example.com
-color_scheme: auto # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the user can choose the light or dark mode themself.
-
 
 #-------------------------------
 # Author Settings
 author:
-  author__name: Mattia Pacchin
-  author__bio: IT, DIY and MTB lover. I built a wooden pc holder for my bicycle handlebar to program while riding on my favorite trails.
+  author__name: Pacs Brothers
+  author__bio: IT, DIY and bike lover.
   author__avatar: '/images/logo/umb-trans.png'
 
 social:
