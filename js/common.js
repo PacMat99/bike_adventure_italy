@@ -134,24 +134,19 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // Swiper initialization
-const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    direction: 'vertical',
+const swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
     loop: true,
-
-    // If we need pagination
+    autoplay: {
+        delay: 5000
+    },
     pagination: {
-        el: '.swiper-pagination',
+        el: ".swiper-pagination",
+        clickable: true,
     },
-
-    // Navigation arrows
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-
-    // And if we need scrollbar
-    scrollbar: {
-        el: '.swiper-scrollbar',
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
     },
 });
