@@ -57,12 +57,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    if (toggleTheme) {
-        toggleTheme.addEventListener("click", () => {
-            darkMode();
-        });
-    };
-
 
     // =====================
     // Simple Jekyll Search
