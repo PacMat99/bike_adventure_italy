@@ -1,7 +1,7 @@
 #-------------------------------
 # Site Settings
 title: Bike Adventure Italy
-logo: './images/logo/long_logo.png' 
+logo: '/images/logo/long_logo.png' 
 description: Bike Adventure Italy è il luogo perfetto per gli amanti del ciclismo che desiderano esplorare l'Italia attraverso percorsi avvincenti e panorami spettacolari. Offrendo una vasta gamma di tracciati, esperienze autentiche immerse nella cultura locale, una comunità appassionata di ciclisti e risorse utili per la pianificazione del viaggio, Bike Adventure Italy è la destinazione definitiva per un'esperienza ciclistica indimenticabile in Italia. Unisciti a noi e preparati a pedalare verso nuove avventure!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://bikeadventureitaly.it" # the base hostname & protocol for your site, e.g. http://example.com
@@ -11,7 +11,7 @@ url: "https://bikeadventureitaly.it" # the base hostname & protocol for your sit
 author:
   author__name: Pacs Brothers
   author__bio: IT, DIY and bike lover.
-  author__avatar: './images/logo/logo.png'
+  author__avatar: '/images/logo/logo.png'
 
 social:
 - {icon: "logo-youtube", link: "https://www.youtube.com/@PacsRiders"}
@@ -35,23 +35,23 @@ gallery:
   gallery__columns: 3
   gallery__images:
     - alt: 'baldo2'
-      url: './images/social/baldo2.png'
+      url: '/images/social/baldo2.png'
     - alt: 'baldo3'
-      url: './images/social/baldo3.png'
+      url: '/images/social/baldo3.png'
     - alt: 'bici_asolo'
-      url: './images/social/bici_asolo.png'
+      url: '/images/social/bici_asolo.png'
     - alt: 'elba1'
-      url: './images/social/elba1.png'
+      url: '/images/social/elba1.png'
     - alt: 'elba2'
-      url: './images/social/elba2.png'
+      url: '/images/social/elba2.png'
     - alt: 'elba4'
-      url: './images/social/elba4.png'
+      url: '/images/social/elba4.png'
     - alt: 'lessinia1'
-      url: './images/social/lessinia1.png'
+      url: '/images/social/lessinia1.png'
     - alt: 'lessinia2'
-      url: './images/social/lessinia2.png'
+      url: '/images/social/lessinia2.png'
     - alt: 'recoaro1'
-      url: './images/social/recoaro1.png'
+      url: '/images/social/recoaro1.png'
 
 
 #-------------------------------

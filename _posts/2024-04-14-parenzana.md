@@ -2,7 +2,7 @@
 layout: post
 title: LA CICLABILE DELLA PARENZANA
 date:   2024-04-14 19:00:00 +0200
-image:  './images/blogs/parenzana/parenzana6.png'
+image:  '/images/blogs/parenzana/parenzana6.png'
 tags:   [bikepacking, mtb, gravel, cicloturismo, ebike]
 regions: [Friuli Venezia Giulia, Slovenia, Croazia]
 ---
