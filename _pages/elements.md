@@ -2,7 +2,7 @@
 layout: page
 title: 
 permalink:
-image: '/images/17.jpg'
+image: './images/17.jpg'
 ---
 
 permalink: /elements/
@@ -112,25 +112,25 @@ li {
 
 ## Images
 
-![Beach]({{site.baseurl}}/images/12-1.jpg#wide)
+![Beach]({{site.baseurl}}./images/12-1.jpg#wide)
 *Photo by [Luke McKeown](https://unsplash.com/photos/nlyWZtWTzCo) on [Unsplash](https://unsplash.com/)*
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/100.jpg">
-    <img src="/images/101.jpg">
-    <img src="/images/102.jpg">
-    <img src="/images/103.jpg">
-    <img src="/images/104.jpg">
-    <img src="/images/105.jpg">
-    <img src="/images/106.jpg">
-    <img src="/images/107.jpg">
-    <img src="/images/108.jpg">
+    <img src="./images/100.jpg">
+    <img src="./images/101.jpg">
+    <img src="./images/102.jpg">
+    <img src="./images/103.jpg">
+    <img src="./images/104.jpg">
+    <img src="./images/105.jpg">
+    <img src="./images/106.jpg">
+    <img src="./images/107.jpg">
+    <img src="./images/108.jpg">
   </div>
   <em>Gallery / <a href="https://unsplash.com/" target="_blank">Unsplash</a></em>
 </div>
 
-![Sea]({{site.baseurl}}/images/18.jpg)
+![Sea]({{site.baseurl}}./images/18.jpg)
 *Photo by [Sean Kelley](https://unsplash.com/photos/aQ5MBh_mfcc) on [Unsplash](https://unsplash.com/)*
 
 ***

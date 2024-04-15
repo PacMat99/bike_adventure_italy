@@ -265,7 +265,7 @@ table td {
 }
 
 .swiper-div {
-    margin-bottom: 32px;
+    margin: 32px 0px;
     --swiper-navigation-color: #fff;
     --swiper-pagination-color: #fff;
 }
@@ -274,4 +274,11 @@ table td {
 /* komoot css */
 .maps-container {
     margin-bottom: 32px;
+}
+
+
+/* additional css */
+.description-margin {
+    margin-left: 24px;
+    margin-right: 24px;
 }
