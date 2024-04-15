@@ -8,7 +8,7 @@
     z-index: -1;
     overflow: auto;
     opacity: 0;
-    background: var(--beige);
+    background: var(--dark-white);
     transition: all .25s ease;
 
     &.is-visible {
@@ -49,7 +49,7 @@
         cursor: pointer;
         will-change: transform;
         transition: all .25s;
-        background: var(--beige);
+        background: var(--dark-white);
 
         &:hover {
             transform: translateY(-50%) rotate(90deg);

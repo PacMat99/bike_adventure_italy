@@ -162,7 +162,7 @@ hr {
 
 table {
     font-size: 12px;
-    color: var(--dark);
+    color: var(--dark-green);
     width: 100%;
     border-width: 1px;
     border-color: var(--background-alt-color);
@@ -236,17 +236,12 @@ table td {
     background-color: var(--background-color) !important;
 }
 
+
+/* swiper css */
 .swiper {
     width: 100%;
     height: 100%;
 }
-
-/* swiper css */
-// TODO: swiper icons must be white
-//? {
-//    --swiper-navigation-color: #fff;
-//    --swiper-pagination-color: #fff;
-//}
 
 .swiper-slide {
     text-align: center;
@@ -270,5 +265,13 @@ table td {
 }
 
 .swiper-div {
+    margin-bottom: 32px;
+    --swiper-navigation-color: #fff;
+    --swiper-pagination-color: #fff;
+}
+
+
+/* komoot css */
+.maps-container {
     margin-bottom: 32px;
 }

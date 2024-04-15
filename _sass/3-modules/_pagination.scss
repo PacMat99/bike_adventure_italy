@@ -87,17 +87,6 @@
   }
 }
 
-.dark-mode {
-
-  .pagination__next,
-  .pagination__prev {
-
-    &.disabled {
-      opacity: 0.78;
-    }
-  }
-}
-
 .pagination__next {
   &:hover {
     i {
