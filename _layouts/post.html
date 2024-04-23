@@ -42,11 +42,11 @@ layout: default
     
                     <div class="post__meta">
                         <a href="{{site.baseurl}}/about/" class="post__author-image">
-                            <img class="lazy" data-src="{{site.author.author__avatar}}" alt="{{site.author.author__name}}">
+                            <img class="lazy" data-src="{{page.author.avatar}}" alt="{{page.author.name}}">
                         </a>
 
                         <div class="post__meta-bottom">
-                            <a class="post__author" href="{{site.baseurl}}/about/">{{site.author.author__name}}</a>
+                            <a class="post__author" href="{{site.baseurl}}/about/">{{page.author.name}}</a>
                             <time class="post__date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
                             <div>
                                 <span class="post__reading-time">
@@ -71,6 +71,23 @@ layout: default
         </div>
 
     </article>
+
+    {% if page.slideshow_images %}
+    <!-- Swiper -->
+    <div class="swiper mySwiper row animate">
+        <div class="swiper-wrapper">
+            {% for slideshow_image in page.slideshow_images %}
+            <div class="swiper-slide">
+                <img src="{{slideshow_image}}" loading="lazy" />
+            </div>
+            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+            {% endfor %}
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+    {% endif %}
 </div>
 <!-- end post -->
 

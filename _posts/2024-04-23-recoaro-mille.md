@@ -4,6 +4,13 @@ title:  RECOARO MILLE BIKE PARK
 date:   2024-04-23 10:35:00 +0200
 image:  '/images/social/honzo_esd.png'
 tags:   [family, mtb, ebike, enduro]
+author:
+    name: 'Mattia Pacchin'
+    avatar: '/images/authors/mattia.jpg'
+slideshow_images: [
+    images/social/honzo_esd.png,
+    images/social/vendetta1.png
+]
 ---
 
 ## Perché nasce il Recoaro Mille Bike Park
@@ -56,21 +63,4 @@ Per gli utenti esperti alla ricerca di nuove sfide e avventure, ci sono percorsi
             </a>
         </li>
     </ul>
-</div>
-
-<!-- Swiper -->
-<div class="swiper mySwiper row animate swiper-div">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide">
-            <img src="images/social/honzo_esd.png" loading="lazy" />
-        </div>
-        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-        <div class="swiper-slide">
-            <img src="images/social/vendetta1.png" loading="lazy" />
-        </div>
-        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-    </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-pagination"></div>
 </div>
