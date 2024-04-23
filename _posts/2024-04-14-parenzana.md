@@ -8,6 +8,7 @@ regions: [Friuli Venezia Giulia, Slovenia, Croazia]
 author:
     name: 'Mattia Pacchin'
     avatar: '/images/authors/mattia.jpg'
+    url: 'mattia.html'
 slideshow_images: [
     images/blogs/parenzana/parenzana1.png,
     images/blogs/parenzana/parenzana2.png,
