@@ -1,57 +1,36 @@
 ---
 layout: default
 image: '/images/logo/logo.png'
+slideshow_images: [
+    images/social/baldo1.png,
+    images/social/baldo2.png,
+    images/social/baldo3.png,
+    images/social/bici_asolo.png,
+    images/social/elba1.png,
+    images/social/elba2.png,
+    images/social/elba4.png,
+    images/social/lessinia1.png,
+    images/social/lessinia2.png,
+    images/social/recoaro1.png
+]
 ---
 
 <div class="container">
     <!-- Swiper -->
-    <div class="swiper mySwiper row swiper-div">
-            <div class="swiper-wrapper">
+    <div class="swiper mySwiper row animate">
+        <div class="swiper-wrapper">
+            {% for slideshow_image in page.slideshow_images %}
             <div class="swiper-slide">
-                <img src="images/social/baldo1.png" loading="lazy" />
+                <img src="{{slideshow_image}}" loading="lazy" />
             </div>
             <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-            <div class="swiper-slide">
-                <img src="images/social/baldo2.png" loading="lazy" />
-            </div>
-            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-            <div class="swiper-slide">
-                <img src="images/social/baldo3.png" loading="lazy" />
-            </div>
-            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-            <div class="swiper-slide">
-                <img src="images/social/bici_asolo.png" loading="lazy" />
-            </div>
-            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-            <div class="swiper-slide">
-                <img src="images/social/elba1.png" loading="lazy" />
-            </div>
-            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-            <div class="swiper-slide">
-                <img src="images/social/elba2.png" loading="lazy" />
-            </div>
-            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-            <div class="swiper-slide">
-                <img src="images/social/elba4.png" loading="lazy" />
-            </div>
-            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-            <div class="swiper-slide">
-                <img src="images/social/lessinia1.png" loading="lazy" />
-            </div>
-            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-            <div class="swiper-slide">
-                <img src="images/social/lessinia2.png" loading="lazy" />
-            </div>
-            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-            <div class="swiper-slide">
-                <img src="images/social/recoaro1.png" loading="lazy" />
-            </div>
-            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+            {% endfor %}
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-pagination"></div>
     </div>
+
     <div class="row">
         <p class="description-margin">
             {{site.description}}
@@ -67,5 +46,13 @@ image: '/images/logo/logo.png'
 </div>
 
 {% include pagination.html %}
+
+<div class="container">
+    <iframe src="https://www.komoot.com/it-it/collection/2700274/embed" width="100%" height="720" frameborder="0" scrolling="no"></iframe>
+</div>
+
+<!--<div class="container">
+    <iframe src="https://ridewithgps.com/embeds?type=event&eventId=313155&title=Italy&metricUnits=true&sampleGraph=true&showPhotos=true&hideSurface=true&defaultShowAll=true" style="width: 1px; min-width: 100%; height: 700px; border: none;" scrolling="no"></iframe>
+</div>-->
 
 {% include section-tags.html %}
