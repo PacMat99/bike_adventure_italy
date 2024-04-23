@@ -241,6 +241,10 @@ table td {
 .swiper {
     width: 100%;
     height: 100%;
+    margin: 32px 0px;
+    --swiper-navigation-color: #fff;
+    --swiper-pagination-color: #fff;
+    border-radius: 10px;
 }
 
 .swiper-slide {
@@ -257,17 +261,6 @@ table td {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.swiper {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.swiper-div {
-    margin: 32px 0px;
-    --swiper-navigation-color: #fff;
-    --swiper-pagination-color: #fff;
 }
 
 
