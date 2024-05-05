@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+<!-- begin post -->
+<div class="container animate">
+
+    <article class="post">
+
+        <div class="post__content">
+            {{ content }}
+        </div>
+
+    </article>
+</div>
+<!-- end post -->
+
+<div class="container animate">
+    {% if page.slideshow_images %}
+        <!-- Swiper -->
+        <div class="swiper mySwiper row animate">
+            <div class="swiper-wrapper">
+                {% for slideshow_image in page.slideshow_images %}
+                <div class="swiper-slide">
+                    <img src="{{slideshow_image}}" loading="lazy" />
+                </div>
+                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                {% endfor %}
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    {% endif %}
+</div>
+
+{% if site.disqus-identifier %}
+    <div class="container">
+        <div class="row">
+            <div class="col col-12">
+                {% include disqus-comments.html %} 
+            </div>
+        </div>
+    </div>
+{% endif %}

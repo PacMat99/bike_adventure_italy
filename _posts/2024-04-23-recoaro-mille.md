@@ -30,7 +30,7 @@ RKBP offre diversi **servizi** tra cui:
 - Officina
 - Cucina con prodotti locali di qualità
 
-## Itinerari per famiglie biker alle prime armi
+<!--## Itinerari per famiglie biker alle prime armi
 
 
 
@@ -38,7 +38,7 @@ RKBP offre diversi **servizi** tra cui:
 
 
 
-## Itinerari enduro style
+## Itinerari enduro style-->
 
 
 

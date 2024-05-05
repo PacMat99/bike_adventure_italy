@@ -1,0 +1,20 @@
+---
+layout: page
+title: Regioni
+permalink: /regions/
+image: 
+---
+
+<h2>
+    Trova i tuor suddivisi per regione
+</h2>
+
+{% for page in site.pages %}
+    {% unless page.name == 'about.md' or page.name == 'tags.html' or page.name == 'elements.html' or page.name == 'davide.md' or page.name == 'mattia.md' or page.name == 'regions.html' %}
+        {% if page.title %}
+        <li class="nav__item">
+            <a href="{{ page.url | prepend: site.baseurl }}" class="nav__link">{{ page.title }}</a>
+        </li>
+        {% endif %}
+    {% endunless %}
+{% endfor %}
