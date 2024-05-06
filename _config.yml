@@ -5,6 +5,8 @@ logo: '/images/logo/long_logo.png'
 description: Bike Adventure Italy è il luogo perfetto per gli amanti del ciclismo che desiderano esplorare l'Italia attraverso percorsi avvincenti e panorami spettacolari. Offrendo una vasta gamma di tracciati, esperienze autentiche immerse nella cultura locale, una comunità appassionata di ciclisti e risorse utili per la pianificazione del viaggio, Bike Adventure Italy è la destinazione definitiva per un'esperienza ciclistica indimenticabile in Italia. Unisciti a noi e preparati a pedalare verso nuove avventure!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://bikeadventureitaly.it" # the base hostname & protocol for your site, e.g. http://example.com
+languages: ["it", "en"]
+exclude_from_localizations: ["js", "images", "_includes", "_layouts", "_pages", "_sass"]
 
 #-------------------------------
 # Author Settings
@@ -63,7 +65,7 @@ gallery:
 #  description: 
 
 # NOTE
-# Menso theme comes with a contact form built-in. You can use this form with Formspree (https://formspree.io/) service and get up to 50 submissions for free. Also, you can easily switch to another service if you want.
+# This theme comes with a contact form built-in. You can use this form with Formspree (https://formspree.io/) service and get up to 50 submissions for free. Also, you can easily switch to another service if you want.
 
 
 #-------------------------------
@@ -83,6 +85,7 @@ permalink: /:title
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-multiple-languages-plugin
 
 paginate: 9
 paginate_path: "/page/:num"

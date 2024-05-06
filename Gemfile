@@ -4,3 +4,4 @@ gem "jekyll"
 gem "jekyll-paginate"
 gem "jekyll-sitemap"
 gem "jekyll-tagging"
+gem 'jekyll-multiple-languages-plugin'
