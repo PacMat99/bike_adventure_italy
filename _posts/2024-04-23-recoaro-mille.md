@@ -3,7 +3,7 @@ layout: post
 title:  'RECOARO: UN PARADISO PER LE BICI'
 date:   2024-04-23 10:35:00 +0200
 image:  '/images/social/honzo_esd.png'
-tags:   [family, mtb, ebike, enduro]
+tags:   [family, mtb, ebike]
 author:
     name: 'Mattia Pacchin'
     avatar: '/images/authors/mattia.jpg'
