@@ -16,7 +16,7 @@ slideshow_images: [
 ---
 
 <div class="maps-container">
-    <iframe src="https://www.komoot.com/it-it/collection/2622662/embed" width="580" height="580" frameborder="0" scrolling="no"></iframe>
+    <iframe src="https://www.komoot.com/it-it/collection/2779471/embed" width="580" height="580" frameborder="0" scrolling="no"></iframe>
 </div>
 
 ## Abruzzo: Terra di Natura Incontaminata, Tradizioni Antiche e Gusto Autentico
