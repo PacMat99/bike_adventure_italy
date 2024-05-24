@@ -126,7 +126,7 @@
         text-transform: capitalize;
         border: none;
         border-radius: 8px;
-        color: var(--heading-font-color);
+        color: var(--white);
         transition: none;
         background-color: var(--background-alt-color);
     
@@ -206,7 +206,7 @@
     .post__date {
         font-size: 14px;
         font-weight: 400;
-        color: var(--text-alt-color);
+        color: var(--orange);
     }
 }
 
@@ -310,9 +310,9 @@
     }
 
     @media only screen and (max-width: $mobile) {
-         &.is-open {
-             margin: 0 auto;
-         }
+        &.is-open {
+            margin: 0 auto;
+        }
     }
 }
 

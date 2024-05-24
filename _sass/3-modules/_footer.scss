@@ -15,9 +15,9 @@
         flex-grow: 1;
     }
 
-     @media only screen and (max-width: $mobile) {
-         padding: 60px 0;
-     }
+    @media only screen and (max-width: $mobile) {
+        padding: 60px 0;
+    }
 }
 
 /* Footer Author */
@@ -58,11 +58,12 @@
     font-size: 32px;
     font-weight: 900;
     line-height: 1;
+    color: var(--white);
 }
 
 .footer__author-bio {
     margin-bottom: 0;
-    color: var(--text-alt-color);
+    color: var(--white);
 }
 
 .social {
@@ -92,10 +93,10 @@
         align-items: center;
         padding: 4px;
         font-size: 20px;
-        color: var(--social-color);
+        color: var(--white);
 
         &:hover {
-            color: var(--social-hover-color);
+            color: var(--orange);
         }
     }
 }
@@ -106,6 +107,7 @@
     .footer__gallery-title {
         margin-bottom: 24px;
         font-size: 28px;
+        color: var(--white);
     }
 
     .gallery__image {
@@ -142,16 +144,13 @@
     margin-right: 20px;
     font-size: 14px;
     font-weight: 500;
-    color: var(--text-alt-color);
+    color: var(--dark-grey);
 
     a {
-        text-decoration: underline;
-        text-decoration-color: transparent;
-        color: var(--heading-font-color);
+        color: var(--dark-green);
 
         &:hover {
-            text-decoration-color: var(--heading-font-color);
-            color: var(--heading-font-color);
+            color: var(--orange);
         }
     }
 }
@@ -160,10 +159,10 @@
     min-width: 36px;
     height: 36px;
     font-size: 20px;
-    line-height: 36px;
+    line-height: 44px;
     text-align: center;
     border-radius: 8px;
-    color: var(--heading-font-color);
+    color: var(--white);
     background-color: var(--background-alt-color);
     cursor: pointer;
     transition: all .25s ease;
