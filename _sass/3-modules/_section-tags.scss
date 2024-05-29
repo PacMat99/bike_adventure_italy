@@ -16,7 +16,7 @@
   padding-bottom: 62%;
   border-radius: 8px;
   overflow: hidden;
-  background: var(--background-alt-color);
+  background: var(--dark-green);
   transition: transform .2s;
 
   &:hover {
@@ -48,8 +48,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
     border-radius: 4px;
-    color: var(--heading-font-color);
-    background: var(--background-color);
+    color: var(--dark-green);
+    background: var(--white);
     pointer-events: none;
   }
 }

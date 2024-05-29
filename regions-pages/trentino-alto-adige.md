@@ -16,7 +16,7 @@ slideshow_images: [
 ---
 
 <div class="maps-container">
-    <iframe src="https://www.komoot.com/it-it/collection/2622662/embed" width="580" height="580" frameborder="0" scrolling="no"></iframe>
+    <iframe src="https://www.komoot.com/it-it/collection/2779497/embed" width="580" height="580" frameborder="0" scrolling="no"></iframe>
 </div>
 
 ## Trentino Alto Adige: Terra di Montagne, Tradizioni e Paesaggi Incontaminati

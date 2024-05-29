@@ -25,7 +25,7 @@
     min-height: 280px;
     border-radius: 8px;
     overflow: hidden;
-    background: var(--background-alt-color);
+    background: var(--dark-green);
 
     img {
         position: absolute;
@@ -66,7 +66,7 @@
     border-radius: 8px;
     overflow: hidden;
     transform: translate(0);
-    background-color: var(--background-alt-color);
+    background-color: var(--dark-green);
 
     .post-video__wrap,
     .page-video__wrap {
@@ -126,9 +126,9 @@
         text-transform: capitalize;
         border: none;
         border-radius: 8px;
-        color: var(--heading-font-color);
+        color: var(--white);
         transition: none;
-        background-color: var(--background-alt-color);
+        background-color: var(--dark-green);
     
         &:last-child {
             margin-right: 0;
@@ -170,7 +170,7 @@
         border-radius: 50%;
         overflow: hidden;
         margin-right: 12px;
-        background-color: var(--background-alt-color);
+        background-color: var(--dark-green);
 
         img {
             position: absolute;
@@ -195,18 +195,18 @@
         font-weight: 500;
         text-decoration: underline;
         text-decoration-color: transparent;
-        color: var(--heading-font-color);
+        color: var(--dark-green);
         transition: text-decoration-color .35s;
 
         &:hover {
-            text-decoration-color: var(--heading-font-color);
+            text-decoration-color: var(--dark-green);
         }
     }
 
     .post__date {
         font-size: 14px;
         font-weight: 400;
-        color: var(--text-alt-color);
+        color: var(--orange);
     }
 }
 
@@ -214,17 +214,17 @@
 .page {
     max-width: 760px;
     margin: 0 auto 60px;
-    color: var(--text-color);
+    color: var(--dark-grey);
 
     a {
         font-weight: 500;
         color: var(--light-orange);
-        border-bottom: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--green);
 
         &:hover {
-            /* color: var(--link-color); */
+            /* color: var(--orange); */
             color: var(--orange);
-            border-bottom-color: var(--link-color-hover);
+            border-bottom-color: var(--dark-orange);
         }
     }
 
@@ -288,7 +288,7 @@
         text-decoration-color: transparent;
 
         &:hover {
-            text-decoration-color: var(--heading-font-color);
+            text-decoration-color: var(--dark-green);
         }
     }
 
@@ -310,9 +310,9 @@
     }
 
     @media only screen and (max-width: $mobile) {
-         &.is-open {
-             margin: 0 auto;
-         }
+        &.is-open {
+            margin: 0 auto;
+        }
     }
 }
 
@@ -328,7 +328,7 @@
 
     .error__text {
         margin-bottom: 0;
-        color: var(--text-alt-color);
+        color: var(--dark-green);
     }
     
     @media only screen and (max-width: $mobile) {

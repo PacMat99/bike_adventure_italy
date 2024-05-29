@@ -1,6 +1,6 @@
 /* Header */
 .header {
-    background-color: var(--light-green);
+    background-color: var(--dark-green);
 
     .header__inner {
         position: relative;
@@ -30,7 +30,7 @@
     transition: color .25s ease;
 
     &:hover {
-        color: var(--brand-color);
+        color: var(--dark-green);
     }
 }
 
@@ -51,7 +51,7 @@
         z-index: 100;
         opacity: 0;
         visibility: hidden;
-        background-color: var(--dark-white);
+        background-color: var(--green);
 
         &.is-open {
             opacity: 1;
@@ -74,11 +74,12 @@
                 .nav__link {
                     display: inline-block;
                     padding: 16px 0;
-                    font-size: 18px;
+                    font-size: 24px;
                     transition: color .25s ease;
+                    color: var(--white);
 
                     &:hover {
-                        color: var(--brand-color);
+                        color: var(--dark-green);
                     }
                 }
             }
@@ -99,8 +100,8 @@
         font-size: 24px;
         line-height: 1;
         border-radius: 50%;
-        color: var(--heading-font-color);
-        background: var(--background-alt-color);
+        color: var(--green);
+        background: var(--dark-green);
         cursor: pointer;
 
         &:hover {
@@ -143,7 +144,7 @@
             font-size: 36px;
             font-weight: 700;
             letter-spacing: -1px;
-            color: var(--heading-font-color);
+            color: var(--dark-green);
         }
     }
 
@@ -168,13 +169,14 @@
         .nav__link {
             position: relative;
             padding: 4px 0;
-            font-size: 16px;
+            font-size: 18px;
             line-height: 1;
             font-weight: 700;
             transition: color .25s ease;
+            color: var(--white);
 
             &:hover {
-                color: var(--brand-color);
+                color: var(--orange);
             }
         }
     }
@@ -182,7 +184,7 @@
 
 .nav-button {
     font-size: 21px;
-    color: var(--link-color);
+    color: var(--white);
     cursor: pointer;
 
     .icon__menu {
@@ -195,7 +197,7 @@
         transition: color .25s ease;
 
         &:hover {
-            color: var(--brand-color);
+            color: var(--orange);
         }
     }
 

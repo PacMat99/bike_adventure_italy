@@ -8,7 +8,7 @@
     z-index: -1;
     overflow: auto;
     opacity: 0;
-    background: var(--dark-white);
+    background: var(--green);
     transition: all .25s ease;
 
     &.is-visible {
@@ -45,11 +45,11 @@
         font-size: 24px;
         line-height: 1;
         border-radius: 50%;
-        color: var(--heading-font-color);
+        color: var(--dark-green);
         cursor: pointer;
         will-change: transform;
         transition: all .25s;
-        background: var(--dark-white);
+        background: var(--green);
 
         &:hover {
             transform: translateY(-50%) rotate(90deg);
@@ -68,18 +68,18 @@
         line-height: 24px;
         border: 2px solid transparent;
         border-radius: 2px;
-        color: var(--heading-font-color);
-        background-color: var(--background-alt-color);
+        color: var(--white);
+        background-color: var(--dark-green);
         outline: 0;
         transition: all .25s;
 
         &::placeholder {
             font-weight: 700;
-            color: var(--heading-font-color);
+            color: var(--green);
         }
 
         &:focus {
-            border-color: var(--brand-color);
+            green: var(--dark-green);
         }
 
         &::-ms-clear {
@@ -101,6 +101,6 @@
         width: 100%;
         margin: 0;
         text-align: center;
-        color: var(--heading-font-color);
+        color: var(--white);
     }
 }

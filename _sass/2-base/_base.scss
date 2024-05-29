@@ -7,8 +7,8 @@ body {
     font-size: $base-font-size;
     line-height: $base-line-height;
     overflow-x: hidden;
-    color: var(--text-color);
-    background-color: var(--background-color);
+    color: var(--dark-grey);
+    background-color: var(--white);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
@@ -19,7 +19,7 @@ body {
 
 *::selection {
     color: var(--white);
-    background-color: var(--brand-color);
+    background-color: var(--dark-green);
 }
 
 h1,
@@ -32,7 +32,7 @@ h6 {
     font-weight: $heading-font-weight;
     line-height: $heading-line-height;
     letter-spacing: $heading-letter-spacing;
-    color: var(--heading-font-color);
+    color: var(--dark-green);
 }
 
 h1 {
@@ -66,8 +66,8 @@ blockquote {
     font-size: 24px;
     line-height: 1.7;
     font-weight: 900;
-    border-left: 4px solid var(--brand-color);
-    color: var(--heading-font-color);
+    border-left: 4px solid var(--dark-green);
+    color: var(--dark-green);
 
     p {
         margin-bottom: 10px;
@@ -79,7 +79,7 @@ blockquote {
         font-size: 14px;
         font-weight: 700;
         font-style: normal;
-        color: var(--heading-font-color);
+        color: var(--dark-green);
 
     }
 
@@ -96,7 +96,7 @@ pre {
     white-space: pre-wrap;
     word-wrap: break-word;
     word-break: break-all;
-    color: var(--heading-font-color);
+    color: var(--dark-green);
 }
 
 img,
@@ -117,16 +117,16 @@ img,
         font-style: normal;
         font-weight: normal;
         text-align: center;
-        color: var(--heading-font-color);
+        color: var(--dark-green);
     
         a {
             font-weight: 500;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--green);
             transition: $global-transition;
 
             &:hover {
-                color: var(--link-color);
-                border-color: var(--link-color-hover);
+                color: var(--orange);
+                green: var(--dark-orange);
             }
         }
     
@@ -138,11 +138,11 @@ img,
 
 a {
     text-decoration: none;
-    color: var(--link-color);
+    color: var(--dark-green);
     transition: $global-transition;
 
     &:hover {
-        color: var(--link-color-hover);
+        color: var(--orange);
     }
 }
 
@@ -151,7 +151,7 @@ hr {
     height: 1px;
     margin: 60px 0;
     border: 0;
-    background: var(--background-alt-color);
+    background: var(--dark-green);
 }
 
 .table-container {
@@ -165,23 +165,23 @@ table {
     color: var(--dark-green);
     width: 100%;
     border-width: 1px;
-    border-color: var(--background-alt-color);
+    green: var(--dark-green);
     border-collapse: collapse;
-    color: var(--heading-font-color);
+    color: var(--dark-green);
 }
 
 table th {
     padding: 10px;
     font-size: 16px;
     text-align: left;
-    border: 1px solid var(--th-color);
-    color: var(--heading-font-color);
+    border: 1px solid var(--light-grey);
+    color: var(--dark-green);
     font-weight: 700;
-    background-color: var(--th-color);
+    background-color: var(--light-grey);
 }
 
 table tr {
-    background-color: var(--tr-color);
+    background-color: var(--light-grey);
     transition: all .3s ease;
     &:nth-child(even) {
         background-color: transparent;
@@ -191,7 +191,7 @@ table tr {
 table td {
     padding: 10px;
     font-size: 14px;
-    border: 1px solid var(--background-alt-color);
+    border: 1px solid var(--dark-green);
 }
 
 .button {
@@ -205,15 +205,15 @@ table td {
     outline: none;
     cursor: pointer;
     transition: all .25s;
-    color: var(--heading-font-color);
-    background: var(--background-alt-color);
+    color: var(--dark-green);
+    background: var(--dark-green);
 
     &--primary {
         color: var(--white);
-        background-color: var(--button-background-color);
+        background-color: var(--green);
 
         &:hover {
-            background: var(--button-background-hover);
+            background: var(--dark-green);
         }
     }
 
@@ -233,7 +233,7 @@ table td {
 }
 
 .lightense-backdrop {
-    background-color: var(--background-color) !important;
+    background-color: var(--white) !important;
 }
 
 
