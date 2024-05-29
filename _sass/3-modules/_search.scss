@@ -79,7 +79,8 @@
         }
 
         &:focus {
-            green: var(--dark-green);
+            color: var(--white);
+            //border-color: var(--white);
         }
 
         &::-ms-clear {
