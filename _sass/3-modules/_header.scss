@@ -101,7 +101,7 @@
         line-height: 1;
         border-radius: 50%;
         color: var(--green);
-        background: var(--background-alt-color);
+        background: var(--dark-green);
         cursor: pointer;
 
         &:hover {
@@ -144,7 +144,7 @@
             font-size: 36px;
             font-weight: 700;
             letter-spacing: -1px;
-            color: var(--heading-font-color);
+            color: var(--dark-green);
         }
     }
 

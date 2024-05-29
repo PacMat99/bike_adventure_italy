@@ -21,7 +21,7 @@
   font-size: 18px;
   font-weight: 700;
   line-height: 1;
-  color: var(--text-color);
+  color: var(--dark-grey);
 
   @media only screen and (max-width: $mobile) {
     align-items: stretch;
@@ -37,7 +37,7 @@
   padding: 24px 20px;
   text-align: center;
   border-radius: 8px;
-  background: var(--background-alt-color);
+  background: var(--dark-green);
 
   @media only screen and (max-width: $mobile) {
     align-items: center;
@@ -49,7 +49,7 @@
 .pagination__count {
   margin: 0 32px;
   font-size: 16px;
-  color: var(--link-color);
+  color: var(--orange);
 
   @media only screen and (max-width: $tablet) {
     margin: 0 12px;
@@ -65,7 +65,7 @@
 .pagination__next,
 .pagination__prev {
   &:hover {
-    color: var(--heading-font-color);
+    color: var(--dark-green);
   }
 
   i {

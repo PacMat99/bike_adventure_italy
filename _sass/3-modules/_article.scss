@@ -9,7 +9,7 @@
 
     .article__title a {
       text-decoration: underline;
-      text-decoration-color: var(--link-color-hover);
+      text-decoration-color: var(--dark-orange);
       text-decoration-thickness: 2px;
     }
   }
@@ -30,8 +30,8 @@
   line-height: 1;
   font-weight: 500;
   border-radius: 4px;
-  color: var(--heading-font-color);
-  background: var(--background-color);
+  color: var(--dark-green);
+  background: var(--white);
   pointer-events: none;
 }
 
@@ -44,7 +44,7 @@
   padding-bottom: 62%;
   border-radius: 8px;
   overflow: hidden;
-  background: var(--background-alt-color);
+  background: var(--dark-green);
 
   img {
     position: absolute;
@@ -106,7 +106,7 @@
     text-decoration-thickness: 2px;
 
     &:hover {
-      color: var(--heading-font-color);
+      color: var(--dark-green);
     }
   }
 }
@@ -114,5 +114,5 @@
 .article__excerpt {
   margin-bottom: 0;
   font-size: 16px;
-  color: var(--text-alt-color);
+  color: var(--dark-green);
 }

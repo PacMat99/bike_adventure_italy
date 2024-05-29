@@ -69,7 +69,7 @@
         border: 2px solid transparent;
         border-radius: 2px;
         color: var(--white);
-        background-color: var(--background-alt-color);
+        background-color: var(--dark-green);
         outline: 0;
         transition: all .25s;
 
@@ -79,7 +79,7 @@
         }
 
         &:focus {
-            border-color: var(--dark-green);
+            green: var(--dark-green);
         }
 
         &::-ms-clear {
@@ -101,6 +101,6 @@
         width: 100%;
         margin: 0;
         text-align: center;
-        color: var(--background-color);
+        color: var(--white);
     }
 }
