@@ -83,9 +83,15 @@ permalink: /:title
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-multiple-languages-plugin
 
 paginate: 9
 paginate_path: "/page/:num"
+
+# Multi Language  Support
+languages: ["it", "en"]
+exclude_from_localizations: ["javascript", "images", "css"]
+default_locale_in_subfolder: true
 
 # Pages Path
 defaults:
