@@ -19,18 +19,18 @@ slideshow_images: [
     <iframe src="https://www.komoot.com/it-it/collection/2779471/embed" width="580" height="580" frameborder="0" scrolling="no"></iframe>
 </div>
 
-## Abruzzo: Terra di Natura Incontaminata, Tradizioni Antiche e Gusto Autentico
+## Abruzzo: Land of Untouched Nature, Ancient Traditions, and Authentic Flavors
 
-Nascosto tra le vette imponenti dell'Appennino e le spiagge incantevoli dell'Adriatico, l'Abruzzo è una regione straordinaria che offre un mix unico di paesaggi mozzafiato, tradizioni millenarie e autenticità culinaria.
+Nestled between the imposing peaks of the Apennines and the enchanting beaches of the Adriatic, Abruzzo is an extraordinary region that offers a unique mix of breathtaking landscapes, millennia-old traditions, and culinary authenticity.
 
-## Natura Selvaggia
+## Untamed Nature
 
-L'Abruzzo è noto per la sua bellezza naturale incontaminata. I parchi nazionali della regione, tra cui il Parco Nazionale d'Abruzzo, il Parco Nazionale della Majella e il Parco Nazionale del Gran Sasso e Monti della Laga, offrono paesaggi spettacolari, ricchi di flora e fauna uniche. Le montagne dell'Abruzzo sono un paradiso per gli amanti dell'escursionismo, dello sci e dell'alpinismo, mentre le sue spiagge sabbiose invitano al relax e al divertimento estivo.
+Abruzzo is renowned for its pristine natural beauty. The region's national parks, including the National Park of Abruzzo, the Majella National Park, and the Gran Sasso and Monti della Laga National Park, offer spectacular landscapes rich in unique flora and fauna. The mountains of Abruzzo are a paradise for hiking, skiing, and mountaineering enthusiasts, while its sandy beaches invite relaxation and summer fun.
 
-## Tesori Culturali
+## Cultural Treasures
 
-L'Abruzzo vanta una ricca eredità storica e culturale. I suoi borghi medievali, arroccati sulle colline, raccontano storie antiche di cavalieri e monaci. Città come L'Aquila, con la sua imponente architettura rinascimentale, e Sulmona, patria del poeta latino Ovidio, sono luoghi intrisi di fascino e storia che invitano a una piacevole passeggiata tra le loro strade lastricate.
+Abruzzo boasts a rich historical and cultural heritage. Its medieval villages, perched on hilltops, tell ancient stories of knights and monks. Cities like L'Aquila, with its impressive Renaissance architecture, and Sulmona, the birthplace of the Latin poet Ovid, are places filled with charm and history, inviting a pleasant stroll through their cobblestone streets.
 
-## Cucina Tradizionale
+## Traditional Cuisine
 
-La cucina abruzzese è un vero e proprio viaggio nei sapori autentici dell'Italia centrale. Dai piatti di pasta fatta in casa come la "chitarra alla teramana" ai salumi prelibati come la "ventricina", passando per i formaggi pecorini e i dolci tradizionali come i "confetti di Sulmona", ogni boccone è un'esplosione di gusto e tradizione.
+Abruzzo's cuisine is a true journey into the authentic flavors of central Italy. From homemade pasta dishes like "chitarra alla teramana" to exquisite cured meats like "ventricina," and from pecorino cheeses to traditional sweets like "confetti di Sulmona," every bite is an explosion of taste and tradition.
