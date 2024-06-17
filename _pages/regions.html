@@ -1,23 +1,30 @@
 ---
 layout: page
-title: Regioni
+title: Regions
 permalink: /regions/
 image: 
 ---
 
-<div class="container">
+<class="container">
     <h2>
-        Esplora i tuor suddivisi per regione
+        Explore the tours categorized by region.
     </h2>
 
-    {% for page in site.pages %}
-        {% unless page.name == 'about.md' or page.name == 'tags.html' or page.name == 'elements.html' or page.name == 'davide.md' or page.name == 'mattia.md' or page.name == 'regions.html' %}
-            {% if page.title %}
-                <a href="{{ page.url | prepend: site.baseurl }}">
-                    {{ page.title }}
-                </a>
-                <br />
-            {% endif %}
-        {% endunless %}
-    {% endfor %}
+    <div class="row">
+        <!--<div class="col col-6">
+            {% for page in site.pages %}
+                {% unless page.name == 'about.md' or page.name == 'tags.html' or page.name == 'elements.html' or page.name == 'davide.md' or page.name == 'mattia.md' or page.name == 'regions.html' %}
+                    {% if page.title %}
+                        <a href="{{ page.url | prepend: site.baseurl }}">
+                            {{ page.title }}
+                        </a>
+                        <br />
+                    {% endif %}
+                {% endunless %}
+            {% endfor %}
+        </div>-->
+        <div class="col col-8 col-d-8 col-t-12">
+            {% include italy-map.html %}
+        </div>
+    </div>
 </div>
