@@ -82,6 +82,7 @@
     .social__item {
         margin-bottom: 0;
         margin-right: 16px;
+        color: var(--white);
     
         &:last-child {
             margin-right: 0;
@@ -94,6 +95,18 @@
         padding: 4px;
         font-size: 20px;
         color: var(--dark-green);
+
+        &:hover {
+            color: var(--orange);
+        }
+    }
+
+    .presentation__link {
+        display: flex;
+        align-items: center;
+        padding: 4px;
+        font-size: 20px;
+        color: var(--white);
 
         &:hover {
             color: var(--orange);
