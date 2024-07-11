@@ -129,9 +129,14 @@
         color: var(--white);
         transition: none;
         background-color: var(--dark-green);
-    
+        transition: background-color .5s ease;
+
         &:last-child {
             margin-right: 0;
+        }
+
+        &:hover {
+            background-color: var(--orange);
         }
     }
 
@@ -218,13 +223,9 @@
 
     a {
         font-weight: 500;
-        color: var(--light-orange);
-        border-bottom: 1px solid var(--green);
 
         &:hover {
-            /* color: var(--orange); */
             color: var(--orange);
-            border-bottom-color: var(--dark-orange);
         }
     }
 
@@ -274,6 +275,56 @@
             margin-bottom: 0;
         }
     }
+}
+
+/* Regions for map */
+.region-name {
+    color: var(--dark-orange);
+    text-align: center;
+}
+
+.region-preview-button {
+    margin: 48px 0 32px;
+
+    .region-button {
+        border-radius: 8px;
+        background-color: var(--dark-orange);
+        width: 180px;
+
+        &:hover {
+            background-color: var(--orange);
+        }
+    }
+
+    @media only screen and (max-width: $mobile) {
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: $mobile) {
+    #desc-container {
+        height: 60%;
+    }
+
+    #wrap {
+        float: left;
+        position: relative;
+        left: 50%;
+    }
+
+    #content {
+        float: left;
+        position: relative;
+        left: -50%;
+    }
+}
+
+.show-content {
+    display: block;
+}
+
+.hide-content {
+    display: none;
 }
 
 /* Disqus */
@@ -343,7 +394,7 @@
     margin-top: 80px;
 
     @media only screen and (max-width: $mobile) {
-         margin-top: 60px;
+        margin-top: 60px;
 
         .row .col:last-child {
             margin-bottom: 0;

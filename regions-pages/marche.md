@@ -19,22 +19,22 @@ slideshow_images: [
     <iframe src="https://www.komoot.com/it-it/collection/2779486/embed" width="580" height="580" frameborder="0" scrolling="no"></iframe>
 </div>
 
-## Marche: Terra di Mare, Arte e Tradizioni Autentiche
+## Marche: Land of Sea, Art, and Authentic Traditions
 
-Situata lungo la splendida costa adriatica dell'Italia centrale, le Marche sono una regione ricca di paesaggi mozzafiato, città d'arte e una cultura autentica che incanta e sorprende ogni visitatore. Con le sue città storiche, i suoi borghi medievali e le sue spiagge dorate, le Marche offrono un'esperienza indimenticabile per coloro che desiderano scoprire la bellezza e la ricchezza del centro Italia.
+Located along the stunning Adriatic coast of central Italy, the Marche region is rich in breathtaking landscapes, art cities, and an authentic culture that captivates and surprises every visitor. With its historic cities, medieval villages, and golden beaches, the Marche offer an unforgettable experience for those seeking to discover the beauty and richness of central Italy.
 
-## Città d'Arte e Cultura
+## Cities of Art and Culture
 
-Le Marche vantano alcune delle città più affascinanti e culturalmente ricche d'Italia. Urbino, con il suo centro storico dichiarato Patrimonio dell'Umanità dall'UNESCO, è un gioiello rinascimentale con il suo famoso Palazzo Ducale e la sua atmosfera unica. Ascoli Piceno, con le sue piazze eleganti e i suoi edifici storici, è una città d'arte e di storia che merita di essere scoperta. Macerata, con il suo teatro all'aperto nel cuore della città, offre spettacoli teatrali e musicali di altissimo livello.
+The Marche boast some of Italy's most fascinating and culturally rich cities. Urbino, with its UNESCO World Heritage-listed historic center, is a Renaissance gem renowned for its Ducal Palace and unique atmosphere. Ascoli Piceno, with its elegant squares and historic buildings, is a city of art and history waiting to be explored. Macerata, home to an open-air theater in the heart of the city, hosts high-level theatrical and musical performances.
 
-## Paesaggi Incantevoli
+## Enchanting Landscapes
 
-Ma le Marche non sono solo città affascinanti, sono anche una regione di straordinaria bellezza naturale. Le colline marchigiane, con i loro vigneti e uliveti, offrono panorami mozzafiato e sono ideali per escursioni a piedi o in bicicletta. Le spiagge della Riviera del Conero, con le loro acque cristalline e le scogliere bianche, sono un paradiso per gli amanti del mare e del sole.
+But the Marche are not just about charming cities; they are also a region of extraordinary natural beauty. The Marche hills, with their vineyards and olive groves, offer breathtaking views and are ideal for hiking or cycling. The beaches of the Conero Riviera, with their crystal-clear waters and white cliffs, are a paradise for sea and sun lovers.
 
-## Tradizioni Autentiche
+## Authentic Traditions
 
-Le Marche sono anche una terra di tradizioni antiche e autentiche che si riflettono nella cultura, nella cucina e nelle feste popolari della regione. I borghi medievali, con le loro feste patronali e le sagre gastronomiche, offrono l'opportunità di immergersi nella vita quotidiana della regione e di assaporare i sapori genuini della cucina locale.
+The Marche are also a land of ancient and authentic traditions reflected in the region's culture, cuisine, and popular festivals. Medieval villages, with their patron saint celebrations and gastronomic fairs, provide an opportunity to immerse oneself in the region's daily life and savor the genuine flavors of local cuisine.
 
-## Cucina Tipica
+## Typical Cuisine
 
-La cucina marchigiana è un viaggio nei sapori autentici dell'Italia centrale. Dai piatti di pasta fatta in casa come i "vincisgrassi" e i "crescia sfogliata" ai formaggi prelibati come il "pecorino di fossa" e il "casciotta d'Urbino", passando per i salumi di qualità e i dolci tradizionali come la "pizza dolce" e le "ciambelle", ogni boccone è un'esperienza gastronomica indimenticabile.
+Marche cuisine is a journey through the authentic flavors of central Italy. From homemade pasta dishes like "vincisgrassi" and "crescia sfogliata" to exquisite cheeses such as "pecorino di fossa" and "casciotta d'Urbino," along with high-quality cured meats and traditional sweets like "pizza dolce" and "ciambelle," each bite offers an unforgettable gastronomic experience.

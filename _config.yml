@@ -1,7 +1,7 @@
 #-------------------------------
 # Site Settings
 title: Bike Adventure Italy
-logo: '/images/logo/long_logo.png' 
+#logo: '/images/logo/long_logo.png' 
 description: Bike Adventure Italy è il luogo perfetto per gli amanti del ciclismo che desiderano esplorare l'Italia attraverso percorsi avvincenti e panorami spettacolari. Offrendo una vasta gamma di tracciati, esperienze autentiche immerse nella cultura locale, una comunità appassionata di ciclisti e risorse utili per la pianificazione del viaggio, Bike Adventure Italy è la destinazione definitiva per un'esperienza ciclistica indimenticabile in Italia. Unisciti a noi e preparati a pedalare verso nuove avventure!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://bikeadventureitaly.it" # the base hostname & protocol for your site, e.g. http://example.com
@@ -9,7 +9,7 @@ url: "https://bikeadventureitaly.it" # the base hostname & protocol for your sit
 #-------------------------------
 # Author Settings
 author:
-  author__name: Pacs Brothers
+  author__name: Pacs Riders
   author__bio: IT, DIY and bike lover.
   author__avatar: '/images/logo/logo.png'
 

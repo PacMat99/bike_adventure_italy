@@ -7,32 +7,28 @@ image:
 
 ## Bike Adventure Italy
 
-Benvenuti su Bike Adventure Italy, la tua destinazione definitiva per esplorare e goderti le migliori avventure in bicicletta in Italia!
+Welcome to Bike Adventure Italy, your ultimate destination for exploring and enjoying the best biking adventures in Italy!
 
-Se sei un appassionato di ciclismo in cerca di nuove sfide, emozionanti percorsi e panorami mozzafiato, sei nel posto giusto. Bike Adventure Italy è qui per guidarti attraverso un viaggio senza pari attraverso le terre ricche di storia, cultura e paesaggi spettacolari dell'Italia.
+If you're a cycling enthusiast looking for new challenges, exciting routes, and breathtaking views, you’ve come to the right place. Bike Adventure Italy is here to guide you through an unparalleled journey across the lands rich in history, culture, and spectacular landscapes of Italy.
 
-## Cosa ci rende speciali?
+## What makes us special?
 
-### I migliori tracciati
+### The best routes
 
-Da epici sentieri di montagna a coste costiere mozzafiato, abbiamo selezionato i migliori tracciati per soddisfare tutte le tue preferenze ciclistiche. Che tu sia un appassionato di mountain bike, un ciclista su strada o un amante del cicloturismo, troverai il percorso perfetto per te.
+From epic mountain trails to stunning coastal paths, we have selected the best routes to cater to all your cycling preferences. Whether you're a mountain bike enthusiast, a road cyclist, or a lover of cycle tourism, you will find the perfect path for you.
 
-### Esperienze autentiche
+### Passionate people
 
-Oltre a offrire semplicemente mappe e percorsi, ci impegniamo a fornire esperienze autentiche che ti permetteranno di immergerti completamente nella cultura locale. Dai pittoreschi borghi medievali alle tradizioni culinarie regionali, ogni pedalata con Bike Adventure Italy è un'opportunità per scoprire il cuore pulsante dell'Italia.
+We are more than just a website; we are a community of passionate friends who share the same love for biking adventures. Join us to connect with other enthusiasts, share experiences and tips, and plan your next cycling adventures.
 
-### Community appassionata
+### Useful resources
 
-Siamo più di un semplice sito web, siamo una comunità di ciclisti appassionati che condividono la stessa passione per l'avventura in bicicletta. Unisciti a noi per connetterti con altri appassionati, condividere esperienze e consigli, e pianificare le tue prossime avventure ciclistiche.
+In addition to routes and experiences, we offer a wide range of useful resources to help you plan and prepare for your trip. From practical guides on bike maintenance to tips on what to bring during your excursions, we are here to make your journey as enjoyable and stress-free as possible.
 
-### Risorse utili
+Whether you are an experienced cyclist or an enthusiastic beginner, on Bike Adventure Italy you will find everything you need to have an unforgettable biking experience in Italy.
 
-Oltre ai tracciati e alle esperienze, offriamo una vasta gamma di risorse utili per aiutarti a pianificare e preparare il tuo viaggio. Dalle guide pratiche sulla manutenzione della bici ai consigli su cosa portare con te durante le tue escursioni, siamo qui per rendere il tuo viaggio il più piacevole e senza stress possibile.
+Get ready to pedal towards new adventures with Bike Adventure Italy!
 
-Non importa se sei un ciclista esperto o un principiante entusiasta, su Bike Adventure Italy troverai tutto ciò di cui hai bisogno per vivere un'esperienza ciclistica indimenticabile in Italia.
+## Our videos
 
-Preparati a pedalare verso nuove avventure con Bike Adventure Italy! 
-
-## I nostri video
-
-Se sei interessato ad approfondire la tecnica in bici, apprendere qualche nozione di meccanica ciclistica o semplicemente vuoi scoprire cosa ci piace fare, abbiamo anche un <a href="https://www.youtube.com/@PacsRiders" target="_blank">canale YouTube</a>!
+If you are interested in improving your biking technique, learning some bike mechanics, or simply discovering what we love to do, we also have a <a href="https://www.youtube.com/@PacsRiders" target="_blank">YouTube channel</a>!

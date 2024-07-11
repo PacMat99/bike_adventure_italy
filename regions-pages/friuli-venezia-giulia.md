@@ -19,18 +19,18 @@ slideshow_images: [
     <iframe src="https://www.komoot.com/it-it/collection/2779481/embed" width="580" height="580" frameborder="0" scrolling="no"></iframe>
 </div>
 
-## Friuli Venezia Giulia: Terra di Diversità Culturale, Paesaggi Incantevoli e Gusto Raffinato
+## Friuli Venezia Giulia: Land of Cultural Diversity, Enchanting Landscapes, and Refined Taste
 
-Situato nel punto d'incontro tra Italia, Austria e Slovenia, il Friuli Venezia Giulia è una regione unica e affascinante che offre una miscela straordinaria di cultura, natura e tradizione culinaria. Con le sue città affascinanti, i pittoreschi paesaggi alpini e la ricca eredità storica, il Friuli Venezia Giulia è un luogo da scoprire e amare.
+Situated at the crossroads of Italy, Austria, and Slovenia, Friuli Venezia Giulia is a unique and captivating region offering an extraordinary blend of culture, nature, and culinary tradition. With its charming cities, picturesque alpine landscapes, and rich historical heritage, Friuli Venezia Giulia is a place to discover and love.
 
-## Diversità Culturale
+## Cultural Diversity
 
-Il Friuli Venezia Giulia è una terra di diversità culturale, dove le influenze italiane, austriache e slave si fondono armoniosamente. Trieste, la sua capitale, è una città cosmopolita e vivace, con un patrimonio architettonico straordinario e una storia affascinante. Udine, con il suo centro storico elegante e le sue piazze rinascimentali, è un gioiello da scoprire per gli amanti dell'arte e della storia.
+Friuli Venezia Giulia is a land of cultural diversity, where Italian, Austrian, and Slavic influences harmoniously blend. Trieste, its capital, is a cosmopolitan and lively city with an extraordinary architectural heritage and a fascinating history. Udine, with its elegant historic center and Renaissance squares, is a gem to discover for lovers of art and history.
 
-## Paesaggi Mozzafiato
+## Breathtaking Landscapes
 
-La natura del Friuli Venezia Giulia è spettacolare e variegata. Le Alpi Carniche e le Dolomiti Friulane offrono panorami mozzafiato, con vette imponenti, laghi cristallini e sentieri escursionistici che si snodano tra boschi e prati alpini. La costa del Friuli Venezia Giulia, con le sue spiagge sabbiose e le scogliere rocciose, è un paradiso per gli amanti del mare e del sole.
+The nature of Friuli Venezia Giulia is spectacular and varied. The Carnic Alps and Friulian Dolomites offer breathtaking panoramas, with towering peaks, crystal-clear lakes, and hiking trails winding through forests and alpine meadows. The coast of Friuli Venezia Giulia, with its sandy beaches and rocky cliffs, is a paradise for lovers of the sea and sun.
 
-## Eccellenze Enogastronomiche
+## Enogastronomic Excellence
 
-La cucina del Friuli Venezia Giulia è una festa per i sensi, con i suoi sapori autentici e raffinati che riflettono la ricchezza del territorio. Dai formaggi prelibati come il Montasio e il formaggio di malga alle specialità di mare come il "baccalà alla vicentina", passando per i vini pregiati come il Tocai Friulano e il Ribolla Gialla, ogni piatto è un'esperienza gastronomica indimenticabile.
+The cuisine of Friuli Venezia Giulia is a feast for the senses, with its authentic and refined flavors reflecting the richness of the territory. From exquisite cheeses like Montasio and malga cheese to seafood specialties like "baccalà alla vicentina," and fine wines like Tocai Friulano and Ribolla Gialla, every dish is an unforgettable gastronomic experience.

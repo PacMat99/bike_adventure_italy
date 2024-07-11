@@ -28,10 +28,7 @@
     line-height: 1;
     font-weight: 700;
     transition: color .25s ease;
-
-    &:hover {
-        color: var(--dark-green);
-    }
+    color: var(--white);
 }
 
 .logo__image {

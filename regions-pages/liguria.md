@@ -19,18 +19,18 @@ slideshow_images: [
     <iframe src="https://www.komoot.com/it-it/collection/2779483/embed" width="580" height="580" frameborder="0" scrolling="no"></iframe>
 </div>
 
-## Liguria: Terra di Mare, Montagne e Tradizioni Affascinanti
+## Liguria: Land of Sea, Mountains, and Fascinating Traditions
 
-Situata lungo la splendida costa nord-occidentale dell'Italia, la Liguria è una regione ricca di bellezze naturali, città affascinanti e una cultura marinara vibrante che cattura il cuore di ogni visitatore. Con le sue incantevoli cittadine costiere, i maestosi monti dell'Appennino e le sue tradizioni secolari, la Liguria offre un'esperienza indimenticabile per chiunque desideri scoprire la magia del Mediterraneo.
+Situated along the splendid northwestern coast of Italy, Liguria is a region rich in natural beauty, charming cities, and a vibrant maritime culture that captures the heart of every visitor. With its enchanting coastal towns, the majestic Apennine mountains, and centuries-old traditions, Liguria offers an unforgettable experience for anyone wishing to discover the magic of the Mediterranean.
 
-## Città Incantevoli
+## Enchanting Cities
 
-La Liguria vanta alcune delle città costiere più affascinanti d'Italia. Genova, la sua capitale, è una città portuale ricca di storia e cultura, con i suoi stretti vicoli medievali, le sue piazze eleganti e i suoi edifici storici. Le Cinque Terre, Patrimonio dell'Umanità dell'UNESCO, sono un insieme di cinque pittoreschi villaggi che si affacciano sul mare, incorniciati da scogliere rocciose e vigneti terrazzati. Portofino, con il suo porto turistico esclusivo e le sue case colorate, è un paradiso per i viaggiatori in cerca di eleganza e charme.
+Liguria boasts some of the most captivating coastal cities in Italy. Genoa, its capital, is a historic and cultural port city, with its narrow medieval alleys, elegant squares, and historic buildings. The Cinque Terre, a UNESCO World Heritage Site, are a collection of five picturesque villages overlooking the sea, framed by rocky cliffs and terraced vineyards. Portofino, with its exclusive marina and colorful houses, is a paradise for travelers seeking elegance and charm.
 
-## Natura Incontaminata
+## Pristine Nature
 
-La Liguria offre anche paesaggi naturali mozzafiato che invitano a esplorare e scoprire la bellezza della natura. Le Alpi Liguri, con le loro cime imponenti e i loro sentieri panoramici, sono un paradiso per gli escursionisti e gli amanti della montagna. Il Parco Nazionale delle Cinque Terre, con i suoi sentieri costieri e le sue baie nascoste, offre fantastici scenari per gli amanti del trekking e della natura.
+Liguria also offers breathtaking natural landscapes that invite exploration and discovery of nature's beauty. The Ligurian Alps, with their imposing peaks and panoramic trails, are a paradise for hikers and mountain lovers. The Cinque Terre National Park, with its coastal paths and hidden bays, offers fantastic scenery for trekking and nature enthusiasts.
 
-## Cucina del Mare
+## Seafood Cuisine
 
-La cucina ligure è un tripudio di sapori mediterranei, con un'ampia varietà di piatti a base di pesce fresco e ingredienti locali. Dai famosi "trofie al pesto" alle "focacce" farcite con olive e formaggi, passando per le "acciaciature" di stoccafisso e le "torte di verdura", ogni piatto è un'esperienza gastronomica autentica e deliziosa.
+Ligurian cuisine is a celebration of Mediterranean flavors, with a wide variety of dishes based on fresh fish and local ingredients. From the famous "trofie al pesto" to "focaccia" stuffed with olives and cheese, to "acciughe ripiene" (stuffed anchovies) and "torte di verdura" (vegetable pies), every dish is an authentic and delicious gastronomic experience.
