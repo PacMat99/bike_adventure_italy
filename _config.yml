@@ -9,7 +9,7 @@ url: "https://bikeadventureitaly.it" # the base hostname & protocol for your sit
 #-------------------------------
 # Author Settings
 author:
-  author__name: Pacs Brothers
+  author__name: Pacs Riders
   author__bio: IT, DIY and bike lover.
   author__avatar: '/images/logo/logo.png'
 

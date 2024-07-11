@@ -289,6 +289,7 @@
     .region-button {
         border-radius: 8px;
         background-color: var(--dark-orange);
+        width: 180px;
 
         &:hover {
             background-color: var(--orange);
@@ -316,10 +317,13 @@
         position: relative;
         left: -50%;
     }
-
 }
 
-.hide {
+.show-content {
+    display: block;
+}
+
+.hide-content {
     display: none;
 }
 
@@ -390,7 +394,7 @@
     margin-top: 80px;
 
     @media only screen and (max-width: $mobile) {
-         margin-top: 60px;
+        margin-top: 60px;
 
         .row .col:last-child {
             margin-bottom: 0;
