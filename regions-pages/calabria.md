@@ -19,22 +19,22 @@ slideshow_images: [
     <iframe src="https://www.komoot.com/it-it/collection/2779475/embed" width="580" height="580" frameborder="0" scrolling="no"></iframe>
 </div>
 
-## Calabria: Terra di Sole, Mare e Tradizioni Millenarie
+## Calabria: Land of Sun, Sea, and Ancient Traditions
 
-Situata all'estremità meridionale della penisola italiana, la Calabria è una regione ricca di bellezze naturali, storia antica e autenticità culturale. Con le sue spiagge mozzafiato, le montagne selvagge e le tradizioni radicate nel tempo, la Calabria incanta e sorprende ogni viaggiatore.
+Located at the southern tip of the Italian peninsula, Calabria is a region rich in natural beauty, ancient history, and cultural authenticity. With its breathtaking beaches, wild mountains, and time-honored traditions, Calabria enchants and surprises every traveler.
 
-## Spiagge da Sogno
+## Dream Beaches
 
-La Calabria è famosa per le sue spiagge paradisiache, bagnate dalle acque cristalline dello Ionio e del Tirreno. Da Tropea con la sua spiaggia incorniciata da scogliere calcaree, a Capo Vaticano con le sue baie nascoste, ogni tratto di costa è una cartolina vivente. Le spiagge di sabbia dorata invitano al relax e al divertimento, mentre le calette remote sono un'oasi di pace e tranquillità.
+Calabria is famous for its paradisiacal beaches, bathed by the crystal-clear waters of the Ionian and Tyrrhenian Seas. From Tropea, with its beach framed by limestone cliffs, to Capo Vaticano, with its hidden bays, every stretch of coastline is a living postcard. The golden sandy beaches invite relaxation and fun, while the remote coves are an oasis of peace and tranquility.
 
-## Natura Selvaggia
+## Wild Nature
 
-L'interno della Calabria è dominato da paesaggi montani spettacolari e foreste secolari. Il Parco Nazionale della Sila, con le sue vette imponenti e i suoi laghi cristallini, è un paradiso per gli amanti della natura e delle attività all'aria aperta. Le montagne dell'Aspromonte, ricche di flora e fauna uniche, offrono fantastici percorsi escursionistici e panoramiche mozzafiato.
+The interior of Calabria is dominated by spectacular mountainous landscapes and ancient forests. The Sila National Park, with its imposing peaks and crystal-clear lakes, is a paradise for nature lovers and outdoor enthusiasts. The Aspromonte mountains, rich in unique flora and fauna, offer fantastic hiking trails and breathtaking panoramas.
 
-## Tesori Culturali
+## Cultural Treasures
 
-La Calabria vanta una storia antica che si riflette nei suoi borghi medievali, nei castelli e nei siti archeologici. Gerace, con le sue strette vie acciottolate e le sue chiese storiche, è un esempio straordinario di architettura medievale. Reggio Calabria, con il suo celebre Museo Archeologico Nazionale, ospita una straordinaria collezione di reperti greci antichi, tra cui i famosi Bronzi di Riace.
+Calabria boasts an ancient history reflected in its medieval villages, castles, and archaeological sites. Gerace, with its narrow cobblestone streets and historic churches, is an extraordinary example of medieval architecture. Reggio Calabria, with its renowned National Archaeological Museum, hosts an extraordinary collection of ancient Greek artifacts, including the famous Riace Bronzes.
 
-## Cucina Tradizionale
+## Traditional Cuisine
 
-La cucina calabrese è un viaggio nei sapori autentici del Sud Italia. Dai piatti di pesce fresco come la "spada alla ghiotta" ai salumi prelibati come la "soppressata", passando per i formaggi locali come il "pecorino crotonese", ogni boccone è un'esplosione di gusto e tradizione. Senza dimenticare i vini locali, come il Cirò rosso, che accompagnano ogni pasto con eleganza e raffinatezza.
+Calabrian cuisine is a journey into the authentic flavors of Southern Italy. From fresh fish dishes like "spada alla ghiotta" to exquisite cured meats like "soppressata," and local cheeses like "pecorino crotonese," every bite is an explosion of taste and tradition. Not to mention the local wines, such as Cirò red, which elegantly and refinedly accompany every meal.

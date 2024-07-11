@@ -19,18 +19,18 @@ slideshow_images: [
     <iframe src="https://www.komoot.com/it-it/collection/2779477/embed" width="580" height="580" frameborder="0" scrolling="no"></iframe>
 </div>
 
-## Campania: Terra di Arte, Storia e Gusto Mediterraneo
+## Campania: Land of Art, History, and Mediterranean Flavor
 
-Situata nel cuore del Mediterraneo, la Campania è una regione ricca di tesori artistici, paesaggi mozzafiato e una tradizione culinaria rinomata in tutto il mondo. Con le sue città affascinanti, i siti archeologici straordinari e le coste incantevoli, la Campania offre un viaggio indimenticabile attraverso la storia e la bellezza del Sud Italia.
+Located in the heart of the Mediterranean, Campania is a region rich in artistic treasures, breathtaking landscapes, and a culinary tradition renowned worldwide. With its charming cities, extraordinary archaeological sites, and enchanting coasts, Campania offers an unforgettable journey through the history and beauty of Southern Italy.
 
-## Città d'Arte e Cultura
+## Cities of Art and Culture
 
-La Campania vanta alcune delle città più affascinanti e culturalmente ricche d'Italia. Napoli, la sua capitale, è una metropoli vivace e caotica, famosa per il suo patrimonio artistico e architettonico, la sua cucina deliziosa e la sua energia contagiosa. Pompei e Ercolano, antiche città sepolte dall'eruzione del Vesuvio nel 79 d.C., offrono una testimonianza straordinaria della vita nell'antica Roma. E non possiamo dimenticare la Costiera Amalfitana, con i suoi borghi incantevoli e le viste mozzafiato sul mare.
+Campania boasts some of Italy's most fascinating and culturally rich cities. Naples, its capital, is a lively and chaotic metropolis famous for its artistic and architectural heritage, delicious cuisine, and contagious energy. Pompeii and Herculaneum, ancient cities buried by the eruption of Mount Vesuvius in 79 AD, offer an extraordinary testimony to life in ancient Rome. And we cannot forget the Amalfi Coast, with its charming villages and breathtaking sea views.
 
-## Paesaggi Incantevoli
+## Enchanting Landscapes
 
-La Campania è una regione di straordinaria bellezza naturale. Il Vesuvio, il vulcano iconico che domina il Golfo di Napoli, offre emozionanti escursioni e viste spettacolari sulla città e sul mare. Il Cilento, con le sue spiagge incontaminate e i suoi paesaggi collinari ricoperti da uliveti e vigneti, è un'oasi di tranquillità e bellezza.
+Campania is a region of extraordinary natural beauty. Mount Vesuvius, the iconic volcano that dominates the Gulf of Naples, offers exciting hikes and spectacular views of the city and the sea. The Cilento area, with its pristine beaches and hilly landscapes covered with olive groves and vineyards, is an oasis of tranquility and beauty.
 
-## Cucina Mediterranea
+## Mediterranean Cuisine
 
-La cucina campana è una festa per i sensi, con i suoi sapori freschi e genuini che riflettono la ricchezza del territorio. Dalla pizza napoletana, patrimonio dell'umanità dell'UNESCO, alle specialità di mare come la "zuppa di pesce" e la "mozzarella di bufala", passando per i dolci tradizionali come la "sfogliatella" e il "babà", ogni piatto è un'esplosione di gusto e tradizione.
+Campanian cuisine is a feast for the senses, with its fresh and genuine flavors reflecting the richness of the land. From Neapolitan pizza, a UNESCO World Heritage, to seafood specialties like "zuppa di pesce" and "mozzarella di bufala," and traditional sweets like "sfogliatella" and "babà," every dish is an explosion of taste and tradition.

@@ -19,18 +19,18 @@ slideshow_images: [
     <iframe src="https://www.komoot.com/it-it/collection/2779472/embed" width="580" height="580" frameborder="0" scrolling="no"></iframe>
 </div>
 
-## Basilicata: Terra di Paesaggi Selvaggi, Storia Antica e Cultura Autentica
+## Basilicata: Land of Wild Landscapes, Ancient History, and Authentic Culture
 
-Nascosta tra le montagne dell'Appennino e le coste dello Ionio, la Basilicata è una regione ricca di tesori nascosti, paesaggi mozzafiato e una storia millenaria che affascina e sorprende ogni visitatore.
+Hidden between the Apennine mountains and the Ionian coast, Basilicata is a region rich in hidden treasures, breathtaking landscapes, and a millennia-old history that fascinates and surprises every visitor.
 
-## Paesaggi Incontaminati
+## Untouched Landscapes
 
-La Basilicata è una regione di straordinaria bellezza naturale. Il suggestivo paesaggio delle Dolomiti Lucane e del Parco Nazionale del Pollino offre scenari mozzafiato, con montagne imponenti, canyon spettacolari e boschi secolari. Le coste della Basilicata, punteggiate da calette nascoste e spiagge di sabbia dorata, invitano al relax e alla scoperta di piccoli gioielli marini.
+Basilicata is a region of extraordinary natural beauty. The stunning landscape of the Lucanian Dolomites and the Pollino National Park offers breathtaking views, with towering mountains, spectacular canyons, and ancient forests. The coasts of Basilicata, dotted with hidden coves and golden sandy beaches, invite relaxation and the discovery of small marine gems.
 
-## Storia e Cultura
+## History and Culture
 
-La Basilicata è ricca di testimonianze storiche che narrano di antiche civiltà e tradizioni millenarie. I famosi "Sassi di Matera", dichiarati Patrimonio dell'Umanità dall'UNESCO, sono un esempio straordinario di architettura rupestre che affonda le sue radici nel passato più remoto. I borghi medievali come Tursi, Craco e Castelmezzano, incastonati tra le rocce delle montagne, sono tesori di storia e cultura che invitano a un viaggio nel tempo.
+Basilicata is rich in historical evidence that tells of ancient civilizations and millennia-old traditions. The famous "Sassi di Matera," declared a UNESCO World Heritage Site, are an extraordinary example of rock architecture that has its roots in the most remote past. Medieval villages like Tursi, Craco, and Castelmezzano, nestled among the mountain rocks, are treasures of history and culture that invite a journey back in time.
 
-## Cucina Tradizionale
+## Traditional Cuisine
 
-La cucina lucana è un vero e proprio viaggio nei sapori autentici del Sud Italia. Dalle pietanze rustiche come la "lucanica" e la "lagane e ceci" ai formaggi prelibati come il "pecorino di Filiano", ogni piatto è un omaggio alla tradizione e alla genuinità. Senza dimenticare i vini locali, come l'Aglianico del Vulture, che deliziano il palato di ogni intenditore.
+Lucanian cuisine is a true journey into the authentic flavors of Southern Italy. From rustic dishes like "lucanica" and "lagane e ceci" to exquisite cheeses like "pecorino di Filiano," every dish is a tribute to tradition and genuineness. Not to mention the local wines, such as Aglianico del Vulture, which delight the palate of every connoisseur.

@@ -19,22 +19,24 @@ slideshow_images: [
     <iframe src="https://www.komoot.com/it-it/collection/2779498/embed" width="580" height="580" frameborder="0" scrolling="no"></iframe>
 </div>
 
-## Umbria: Terra di Verdi Colline, Arte Antica e Spiritualità
+## Umbria: Land of Green Hills, Ancient Art, and Spirituality
 
-Situata nel cuore dell'Italia centrale, l'Umbria è una regione ricca di bellezze naturali, tesori artistici e una spiritualità che risuona attraverso i secoli. Con le sue città storiche, i suoi paesaggi incantevoli e la sua cucina genuina, l'Umbria offre un'esperienza autentica e indimenticabile per i viaggiatori in cerca di tranquillità e autenticità.
+Located in the heart of central Italy, Umbria is a region rich in natural beauty, artistic treasures, and spirituality that resonates through the centuries. With its historic cities, enchanting landscapes, and genuine cuisine, Umbria offers an authentic and unforgettable experience for travelers seeking tranquility and authenticity.
 
-## Città d'Arte e Cultura
+## Cities of Art and Culture
 
-L'Umbria vanta alcune delle città più affascinanti e ricche di storia dell'Italia centrale. Perugia, la sua capitale, è una città vibrante e cosmopolita, con il suo centro storico medievale, i suoi musei d'arte e la sua vivace vita notturna. Assisi, con la sua basilica di San Francesco e il suo centro storico dichiarato Patrimonio dell'Umanità dall'UNESCO, è un luogo sacro che attira pellegrini da tutto il mondo.
+Umbria boasts some of the most fascinating and historically rich cities in central Italy. Perugia, its capital, is a vibrant and cosmopolitan city with a medieval historic center, art museums, and a lively nightlife. Assisi, with its Basilica of Saint Francis and its UNESCO World Heritage-listed historic center, is a sacred place that attracts pilgrims from around the world.
 
-## Paesaggi Incantevoli
+## Enchanting Landscapes
 
-Ma l'Umbria non è solo città d'arte, è anche una regione di paesaggi mozzafiato che incantano e rilassano i visitatori. Le colline umbre, con i loro vigneti e oliveti a perdita d'occhio, offrono panorami da cartolina e la possibilità di fare escursioni e passeggiate nella natura. Il Lago Trasimeno, il più grande lago dell'Italia centrale, è un'oasi di tranquillità e serenità, ideale per praticare sport acquatici o semplicemente rilassarsi sulla riva.
+But Umbria is not just about cities of art; it's also a region of breathtaking landscapes that enchant and relax visitors. The Umbrian hills, with their endless vineyards and olive groves, offer postcard-perfect views and opportunities for hiking and nature walks. Lake Trasimeno, the largest lake in central Italy, is an oasis of tranquility and serenity, ideal for water sports or simply relaxing by the shore.
 
-## Spiritualità e Tradizione
+## Spirituality and Tradition
 
-L'Umbria è anche una terra di spiritualità e tradizione, con numerosi santuari, eremi e monasteri che testimoniano la profonda devozione religiosa della regione. Il Sentiero Francescano, che attraversa Assisi e i luoghi legati a San Francesco, è un percorso spirituale che attira migliaia di pellegrini ogni anno. Le feste religiose, come la festa di Sant'Ubaldo a Gubbio e la festa dei Ceri a Orvieto, sono celebrazioni colorate e vibranti che rendono omaggio alle antiche tradizioni umbre.
+Umbria is also a land of spirituality and tradition, with numerous sanctuaries, hermitages, and monasteries that testify to the region's deep religious devotion. The Franciscan Path, which crosses Assisi and places associated with Saint Francis, is a spiritual journey that attracts thousands of pilgrims each year. Religious festivals, such as the Feast of Saint Ubaldo in Gubbio and the Feast of Ceri in Orvieto, are colorful and vibrant celebrations that honor ancient Umbrian traditions.
 
-## Cucina Genuina
+## Genuine Cuisine
 
-La cucina umbra è una vera delizia per il palato, con i suoi sapori autentici e i suoi ingredienti di alta qualità che riflettono la ricchezza della terra. Dai piatti di pasta come la "strangozzi al tartufo" e la "pasta alla norcina", ai piatti di carne come la "porchetta" e la "cinghiale in umido", passando per i formaggi prelibati come il "pecorino umbro" e il "formaggio di fossa", ogni boccone è un'esperienza culinaria indimenticabile.
+Umbrian cuisine is a true delight for the palate, featuring authentic flavors and high-quality ingredients that reflect the region's agricultural bounty. From pasta dishes like "strangozzi al tartufo" (pasta with truffles) and "pasta alla norcina" (pasta with sausage), to meat dishes such as "porchetta" (roast pork) and "cinghiale in umido" (wild boar stew), and exquisite cheeses like "pecorino umbro" and "formaggio di fossa" (aged cheese), every bite is an unforgettable culinary experience.
+
+Umbria's blend of natural beauty, artistic heritage, spirituality, and delicious cuisine makes it a destination that offers both enriching cultural experiences and moments of pure culinary pleasure amidst its serene landscapes.
