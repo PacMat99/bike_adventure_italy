@@ -94,7 +94,6 @@ defaults:
     values:
       permalink: /:basename:output_ext
 
-
 include:
   - _pages
 
