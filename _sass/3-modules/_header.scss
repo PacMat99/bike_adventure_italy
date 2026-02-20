@@ -1,3 +1,7 @@
+@use '../0-settings' as *;
+@use '../1-tools' as *;
+@use '../2-base' as *;
+
 /* Header */
 .header {
     background-color: var(--dark-green);

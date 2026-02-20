@@ -1,3 +1,8 @@
+@use '../0-settings' as *;
+@use '../1-tools' as *;
+@use '../2-base' as *;
+@use '../3-modules' as *;
+
 /* Post + Page */
 .post-head,
 .page-head {

@@ -1,3 +1,7 @@
+@use '../0-settings' as *;
+@use '../1-tools' as *;
+@use '../2-base' as *;
+
 /* Article */
 .article {
     margin-bottom: 32px;
